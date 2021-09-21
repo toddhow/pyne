@@ -69,7 +69,7 @@ ${line03}${dev ? ` ${pad}${blc('<')}${llc('/')}${blc('>')} ${llc('DEVELOPMENT MO
 				type: 3
 			},
 			{
-				name: `with Todd | Prefix ${CLIENT_OPTIONS.defaultPrefix}`,
+				name: `a deathmatch with Todd | Prefix ${CLIENT_OPTIONS.defaultPrefix}`,
 				type: 5
 			},
 			{
