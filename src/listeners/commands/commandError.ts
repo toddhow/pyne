@@ -60,8 +60,8 @@ export class UserEvent extends Listener<typeof Events.CommandError> {
 		return this.alert(message, `Dear ${message.author.toString()}, ${error}`);
 	}
 
-	private argumentError(message: Message, error: ArgumentError<unknown>, piece: Command) {
-		const prefix = this.container.client.fetchPrefix(message);
+	private async argumentError(message: Message, error: ArgumentError<unknown>, piece: Command) {
+		const prefix = await this.container.client.fetchPrefix(message);
 		const identifier = error.identifier;
 		switch (identifier) {
 			case Identifiers.ArgsUnavailable:
@@ -80,8 +80,8 @@ export class UserEvent extends Listener<typeof Events.CommandError> {
 		}
 	}
 
-	private userError(message: Message, error: UserError, piece: Command) {
-		const prefix = this.container.client.fetchPrefix(message);
+	private async userError(message: Message, error: UserError, piece: Command) {
+		const prefix = await this.container.client.fetchPrefix(message);
 		const identifier = error.identifier;
 		switch (identifier) {
 			case Identifiers.ArgsUnavailable:

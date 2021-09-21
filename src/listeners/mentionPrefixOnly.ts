@@ -17,7 +17,7 @@ export class UserEvent extends Listener<typeof Events.MentionPrefixOnly> {
 		if(prefixes!.length == 1) {
 			return send(message, `The prefix in this server is set to: ${'`'.concat(prefixes!.toString()!.replaceAll(',', '` `')).concat('`')}`);
 		} else {
-			return send(message, `The prefixes in this server is set to: ${'`'.concat(prefixes!.toString()!.replaceAll(',', '` `')).concat('`')}`);
+			return send(message, `The prefixes in this server are set to: ${'`'.concat(prefixes!.toString()!.replaceAll(',', '` `')).concat('`')}`);
 		}
 	}
 }

@@ -1,13 +1,11 @@
 # Ignore a blackhole and the folder for development
 node_modules/
 .vs/
+Pyne.code-workspace
 .idea/
 *.iml
 
 dist/
-
-# Ignore the config file (contains sensitive information such as tokens)
-src/config.ts
 
 pnpm-lock.yml
 
