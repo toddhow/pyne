@@ -1,0 +1,19 @@
+{
+	"extends": "@sapphire/ts-config/tsconfig",
+	"compilerOptions": {
+		"types": ["node"],
+		"lib": ["ESNext.String"],
+		"module": "commonjs",
+			"rootDir": "src",
+			"outDir": "dist",
+			"baseUrl": "src",
+			"paths": {
+				"#lib/*": ["lib/*"],
+				"#utils/*": ["lib/util/*"],
+				"#structures/*": ["lib/structures/*"],
+				"#root/*": ["*"]
+			},
+			"tsBuildInfoFile": "dist/.tsbuildinfo"
+		},
+	"include": ["src"]
+}

@@ -1,0 +1,21 @@
+import { container } from '@sapphire/framework';
+
+/**
+ * Fetchs the amount of guilds the bot is in.
+ *
+ * @returns The amount of guilds.
+ */
+export async function fetchGuildCount(): Promise<string> {
+    await container.client.guilds.fetch()
+
+    return container.client.guilds.cache.size.toString()
+}
+
+/**
+ * Fetchs the amount of users in every guild the bot is in.
+ * 
+ * @returns The amount of users in every guild.
+ */
+export async function fetchUserCount(): Promise<string> {
+    return container.client.users.cache.size.toString()
+}
