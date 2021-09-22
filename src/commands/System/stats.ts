@@ -5,8 +5,9 @@ import { PyneCommand } from '#structures/PyneCommand';
 import { DurationFormatAssetsTime, friendlyDuration, TimeTypes } from '#utils/FriendlyDuration';
 import { Message, MessageEmbed, version } from 'discord.js';
 import { reply } from '@sapphire/plugin-editable-commands';
-import dayjs from 'dayjs';
+import { applicationAdapter } from '#lib/api';
 import { cpus, uptime, hostname } from 'os';
+import dayjs from 'dayjs';
 
 @ApplyOptions<PyneCommand.Options>({
 	aliases: ['stats', 'sts'],
@@ -19,7 +20,7 @@ export default class UserCommand extends PyneCommand {
 		// eslint-disable-next-line prettier/prettier
 
 		const startTime = Date.now();
-		const status = (await this.container.api('GET', 'v1/status')).data;
+		const status = (await applicationAdapter('GET', 'v1/status')).data;
 		const endTime = Date.now();
 
 		const embed = new MessageEmbed()
