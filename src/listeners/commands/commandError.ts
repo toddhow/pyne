@@ -96,7 +96,8 @@ export class UserEvent extends Listener<typeof Events.CommandError> {
 						'` to find out how to use this command.'
 				);
 			default:
-		}		return this.alert(message, 'pensive');
+		}
+		return this.alert(message, 'pensive');
 	}
 
 	private alert(message: Message, content: string) {

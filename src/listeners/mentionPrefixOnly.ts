@@ -14,7 +14,7 @@ export class UserEvent extends Listener<typeof Events.MentionPrefixOnly> {
 
 	private async guild(message: GuildMessage) {
 		const prefixes = await this.container.client.fetchPrefix(message);
-		if(prefixes!.length == 1) {
+		if (prefixes!.length == 1) {
 			return send(message, `The prefix in this server is set to: ${'`'.concat(prefixes!.toString()!.replaceAll(',', '` `')).concat('`')}`);
 		} else {
 			return send(message, `The prefixes in this server are set to: ${'`'.concat(prefixes!.toString()!.replaceAll(',', '` `')).concat('`')}`);

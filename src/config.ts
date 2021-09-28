@@ -21,5 +21,5 @@ export const CLIENT_OPTIONS: ClientOptions = {
 	loadDefaultErrorListeners: false,
 	partials: ['CHANNEL'],
 	regexPrefix: /^(hey +)?(rsd|pyne)[,! ]/i,
-	restTimeOffset: 0,
+	restTimeOffset: 0
 };

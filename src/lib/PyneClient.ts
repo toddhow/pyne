@@ -10,17 +10,22 @@ export class PyneClient extends SapphireClient {
 
 	public fetchPrefix = async (message: Message) => {
 		if (!isGuildMessage(message)) return ['*', ''];
-		const result = await this.fetchGuildSettings(message.guild)
+		const result = await this.fetchGuildSettings(message.guild);
 		return result!.prefixes.length ? result!.prefixes : ['*'];
 	};
 
 	public fetchGuildSettings = async (guild: GuildResolvable) => {
 		const resolved = container.client.guilds.resolveId(guild);
 		if (resolved === null) throw new TypeError(`Cannot resolve "guild" to a Guild instance.`);
-		return await container.db.guildSettings.findUnique({
+		const result = await container.db.guildSettings.findUnique({
 			where: { id: resolved }
 		});
-	}
+		if (!result) {
+			return await container.db.guildSettings.create({ data: { id: resolved } });
+		} else {
+			return result;
+		}
+	};
 
 	public async start() {
 		const response = await super.login();

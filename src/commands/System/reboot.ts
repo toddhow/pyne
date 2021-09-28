@@ -6,10 +6,10 @@ import type { Message } from 'discord.js';
 
 @ApplyOptions<PyneCommand.Options>({
 	description: 'Reboots the bot.',
-	detailedDescription: 'The bot goes boom, then the bot goes revive.',
+	detailedDescription: 'The bot goes boom, then the bot goes revive.'
 })
 export class UserCommand extends PyneCommand {
-    @BotOwnerOnly()
+	@BotOwnerOnly()
 	public async run(message: Message) {
 		await send(message, 'Rebooting...').catch((error) => this.container.logger.fatal(error));
 

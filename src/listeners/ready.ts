@@ -3,7 +3,7 @@ import type { PresenceData } from 'discord.js';
 import { Listener, Store } from '@sapphire/framework';
 import { blue, gray, green, magenta, magentaBright, white, yellow } from 'colorette';
 import { CLIENT_OPTIONS } from '../config';
-import { fetchGuildCount, fetchUserCount } from '#utils/functions'
+import { fetchGuildCount, fetchUserCount } from '#utils/functions';
 
 const dev = process.env.NODE_ENV !== 'production';
 
@@ -20,7 +20,7 @@ export class UserEvent extends Listener {
 	public run() {
 		this.printBanner();
 		this.printStoreDebugInformation();
-		this.startActivityDisplay()
+		this.startActivityDisplay();
 	}
 
 	private printBanner() {
@@ -59,7 +59,7 @@ ${line03}${dev ? ` ${pad}${blc('<')}${llc('/')}${blc('>')} ${llc('DEVELOPMENT MO
 	}
 
 	private async startActivityDisplay() {
-		const activites: PresenceData["activities"] = [
+		const activites: PresenceData['activities'] = [
 			{
 				name: `commands in ${await fetchGuildCount()} servers | Prefix ${CLIENT_OPTIONS.defaultPrefix}`,
 				type: 2
@@ -76,12 +76,12 @@ ${line03}${dev ? ` ${pad}${blc('<')}${llc('/')}${blc('>')} ${llc('DEVELOPMENT MO
 				name: `The scammer hunt | Prefix ${CLIENT_OPTIONS.defaultPrefix}`,
 				type: 0
 			}
-		]
+		];
 
 		setInterval(async () => {
-			let activity = activites![Math.floor(Math.random() * activites!.length)]
+			let activity = activites![Math.floor(Math.random() * activites!.length)];
 
-			this.container.client.user?.setActivity(activity)
-		}, 20000)
+			this.container.client.user?.setActivity(activity);
+		}, 20000);
 	}
 }
