@@ -7,11 +7,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model StaffMembers {
-  id  String   @unique
-  rank Int
-}
-
 model GuildSettings {
   id                String    @unique
   prefixes          String[]
