@@ -1,13 +1,19 @@
 {
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>sapphiredev/readme:sapphire-renovate"],
-	"labels": ["Meta: Dependencies"],
-	"pnpm": {
-		"packageRules": [
-			{
-				"matchPackagePatterns": ["prisma", "tslib"],
-				"enabled": false
-			}
-		]
-	}
-}
+    "labels": ["dependencies"],
+    "separateMajorMinor": "false",
+    "packageRules": [
+      {
+        "matchDepTypes": ["devDependencies"],
+        "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest", "lockFileMaintenance", "rollback", "bump"],
+        "groupName": "devDependencies",
+        "semanticCommitType": "chore",
+        "automerge": true
+      },
+      {
+        "matchDepTypes": ["dependencies"],
+        "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest", "lockFileMaintenance", "rollback", "bump"],
+        "groupName": "dependencies",
+        "semanticCommitType": "fix"
+      }
+    ]
+  }
