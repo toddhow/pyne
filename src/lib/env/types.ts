@@ -12,6 +12,8 @@ export interface PyneEnv {
 
 	OWNERS: string;
 
+	SENTRY_URL: string;
+
 	API_ENABLED: BooleanString;
 	API_URL: string;
 

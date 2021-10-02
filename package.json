@@ -21,6 +21,7 @@
 		"@sapphire/type": "^2.1.0",
 		"@sapphire/utilities": "^2.0.1",
 		"@skyra/editable-commands": "^2.1.0",
+		"colorette": "^2.0.13",
 		"dayjs": "^1.10.7",
 		"discord.js": "^13.1.0",
 		"dotenv-cra": "^3.0.2",

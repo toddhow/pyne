@@ -12,6 +12,6 @@ export class UserListener extends Listener {
 		// If the message was sent by a bot, return:
 		if (message.author.bot) return;
 
-        if (message.guild) await this.container.client.fetchPrefix(message)
+		if (message.guild) await this.container.client.fetchPrefix(message);
 	}
 }

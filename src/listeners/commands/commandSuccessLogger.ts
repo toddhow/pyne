@@ -8,7 +8,7 @@ export class UserEvent extends Listener<typeof Events.CommandSuccess> {
 	public constructor(context: PieceContext, options?: ListenerOptions) {
 		super(context, {
 			...options,
-			event: 'mentionPrefixOnly'
+			event: 'commandSuccess'
 		});
 	}
 

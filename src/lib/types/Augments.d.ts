@@ -7,4 +7,4 @@ declare module '@sapphire/pieces' {
 	}
 }
 
-export { };
+export {};
