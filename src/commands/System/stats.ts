@@ -1,7 +1,7 @@
 import { BotOwnerOnly } from '#lib/decorators/index';
 import { ApplyOptions } from '@sapphire/decorators';
 import { container } from '@sapphire/framework';
-import { PyneCommand } from '#structures/PyneCommand';
+import { PyneCommand } from '#lib/structures';
 import { DurationFormatAssetsTime, friendlyDuration, TimeTypes } from '#utils/FriendlyDuration';
 import { Message, MessageEmbed, version } from 'discord.js';
 import { reply } from '@sapphire/plugin-editable-commands';

@@ -1,5 +1,5 @@
 import { AdministatorOnly } from '#lib/decorators/index';
-import { PyneSubCommand } from '#structures/PyneSubCommand';
+import { PyneSubCommand } from '#lib/structures';
 import { ApplyOptions } from '@sapphire/decorators';
 import { container, Args } from '@sapphire/framework';
 import { reply } from '@sapphire/plugin-editable-commands';

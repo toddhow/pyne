@@ -1,11 +1,19 @@
 import { BrandingColors } from '#lib/util/constants';
-import { PyneCommand } from '#structures/PyneCommand';
-import { PynePaginatedMessage } from '#structures/PynePaginatedMessage';
+import { PyneCommand, PynePaginatedMessage } from '#lib/structures';
+import { isGuildMessage } from '#utils/common';
 import { ApplyOptions } from '@sapphire/decorators';
 import { UserOrMemberMentionRegex } from '@sapphire/discord.js-utilities';
 import { Args, container } from '@sapphire/framework';
 import { reply } from '@sapphire/plugin-editable-commands';
-import { Collection, Message, MessageEmbed } from 'discord.js';
+import { Collection, Message, MessageEmbed, Permissions } from 'discord.js';
+
+const PERMISSIONS_PAGINATED_MESSAGE = new Permissions([
+	Permissions.FLAGS.MANAGE_MESSAGES,
+	Permissions.FLAGS.ADD_REACTIONS,
+	Permissions.FLAGS.EMBED_LINKS,
+	Permissions.FLAGS.READ_MESSAGE_HISTORY
+]);
+
 
 function sortCommandsAlphabetically(_: PyneCommand[], __: PyneCommand[], firstCategory: string, secondCategory: string): 1 | -1 | 0 {
 	if (firstCategory > secondCategory) return 1;
@@ -25,15 +33,13 @@ export class UserCommand extends PyneCommand {
 			if (args.getFlags('all')) return this.all(message, context);
 		}
 
-		const command = await args.pick('string');
-		if (container.stores.get('commands').findKey((cmd: any) => cmd.name === command)) return;
-
 		const category = await args.pickResult(UserCommand.categories);
 		if (category.success) return this.display(message, args, category.value - 1, context);
 
 		const page = await args.pickResult('integer', { minimum: 0 });
 		if (page.success) return this.display(message, args, page.value - 1, context);
-		return this.display(message, args, null, context);
+
+		return this.canRunPaginatedMessage(message) ? this.display(message, args, null, context) : this.all(message, context);
 	}
 
 	private async helpCategories(message: Message, _args: PyneCommand.Args) {
@@ -86,6 +92,10 @@ export class UserCommand extends PyneCommand {
 		const response = await reply(message, content);
 		await display.run(response, message.author);
 		return response;
+	}
+
+	private canRunPaginatedMessage(message: Message) {
+		return isGuildMessage(message) && message.channel.permissionsFor(container.client.user!)!.has(PERMISSIONS_PAGINATED_MESSAGE);
 	}
 
 	private getCommandPrefix(context: PyneCommand.Context): string {

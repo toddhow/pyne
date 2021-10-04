@@ -14,6 +14,12 @@ export class PyneClient extends SapphireClient {
 		return result!.prefixes.length ? result!.prefixes : ['*'];
 	};
 
+	/**
+	 * Returns the specified guilds' settings.
+	 * @param GuildResolvable
+	 * @returns GuildSettings
+	 *
+	 */
 	public fetchGuildSettings = async (guild: GuildResolvable) => {
 		const resolved = container.client.guilds.resolveId(guild);
 		if (resolved === null) throw new TypeError(`Cannot resolve "guild" to a Guild instance.`);
@@ -27,13 +33,13 @@ export class PyneClient extends SapphireClient {
 		}
 	};
 
-	public async start() {
+	public start = async () => {
 		const response = await super.login();
 		return response;
-	}
+	};
 
-	public async destroy() {
+	public destroy = async () => {
 		await container.db.$disconnect();
 		return super.destroy();
-	}
+	};
 }

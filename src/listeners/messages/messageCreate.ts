@@ -1,7 +1,7 @@
-import { Listener } from '@sapphire/framework';
+import { Listener, Events } from '@sapphire/framework';
 import type { Message } from 'discord.js';
 
-export class UserListener extends Listener {
+export class UserListener extends Listener<typeof Events.MessageCreate> {
 	public async run(message: Message) {
 		// If the message was sent by a webhook, return:
 		if (message.webhookId !== null) return;
@@ -12,6 +12,6 @@ export class UserListener extends Listener {
 		// If the message was sent by a bot, return:
 		if (message.author.bot) return;
 
-		if (message.guild) await this.container.client.fetchPrefix(message);
+		if (message.guild) await this.container.client.fetchGuildSettings(message.guild);
 	}
 }

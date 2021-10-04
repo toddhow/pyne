@@ -1,4 +1,4 @@
-import type { PyneCommand } from '#structures/PyneCommand';
+import type { PyneCommand } from '#lib/structures';
 import { sendTemporaryMessage } from '#utils/functions';
 import { Args, ArgumentError, Command, CommandErrorPayload, Events, Listener, UserError, Identifiers } from '@sapphire/framework';
 import { RESTJSONErrorCodes } from 'discord-api-types/v9';
