@@ -7,8 +7,9 @@ import { Message, MessageEmbed, User } from 'discord.js';
 import dayjs from 'dayjs';
 
 @ApplyOptions<PyneSubCommand.Options>({
+	aliases: ['database'],
 	subCommands: ['profile', 'add', 'remove'],
-	description: 'prefix configuration for your server',
+	description: '',
 	runIn: ['GUILD_ANY']
 })
 export class UserCommand extends PyneSubCommand {

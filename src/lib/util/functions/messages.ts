@@ -46,3 +46,11 @@ export async function sendTemporaryMessage(message: Message, options: string | M
 	floatPromise(deleteMessage(response, timer));
 	return response;
 }
+
+export async function promptForMessage(message: Message, sendOptions: string | MessageOptions, time = minutes(1)): Promise<string | null> {
+	const response = await message.channel.send(sendOptions);
+	const responses = await message.channel.awaitMessages({ filter: (msg) => msg.author === message.author, time, max: 1 });
+	floatPromise(deleteMessage(response));
+
+	return responses.size === 0 ? null : responses.first()!.content;
+}
