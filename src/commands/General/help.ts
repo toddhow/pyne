@@ -7,7 +7,7 @@ import { Args, container } from '@sapphire/framework';
 import { reply, send } from '@sapphire/plugin-editable-commands';
 import { CommandHelp } from '#lib/CommandHelp';
 import { Collection, Message, MessageEmbed, Permissions } from 'discord.js';
-import type { CommandHelpDisplayOptions } from '#lib/CommandHelp'
+import type { CommandHelpDisplayOptions } from '#lib/CommandHelp';
 
 const PERMISSIONS_PAGINATED_MESSAGE = new Permissions([
 	Permissions.FLAGS.MANAGE_MESSAGES,
@@ -15,7 +15,6 @@ const PERMISSIONS_PAGINATED_MESSAGE = new Permissions([
 	Permissions.FLAGS.EMBED_LINKS,
 	Permissions.FLAGS.READ_MESSAGE_HISTORY
 ]);
-
 
 function sortCommandsAlphabetically(_: PyneCommand[], __: PyneCommand[], firstCategory: string, secondCategory: string): 1 | -1 | 0 {
 	if (firstCategory > secondCategory) return 1;
@@ -28,7 +27,8 @@ function sortCommandsAlphabetically(_: PyneCommand[], __: PyneCommand[], firstCa
 	description: 'Displays all commands or the description of one.',
 	flags: ['cat', 'categories', 'all'],
 	usages: ['--cat/--categories', '--all', 'CategoryName', 'Page', 'CommandName'],
-	extendedHelp: 'The help command shows a paginated list of all commands by their categories, or the extended information of a command if specified.\n\nIf you use `--categories` or `--cat`, you can get the list of all categories and the amount of commands each one of them have.',
+	extendedHelp:
+		'The help command shows a paginated list of all commands by their categories, or the extended information of a command if specified.\n\nIf you use `--categories` or `--cat`, you can get the list of all categories and the amount of commands each one of them have.',
 	examples: ['--cat', '--all', 'General', '2', 'help']
 })
 export class UserCommand extends PyneCommand {
@@ -50,7 +50,6 @@ export class UserCommand extends PyneCommand {
 			const embed = await this.buildCommandHelp(command.value, this.getCommandPrefix(context));
 			return send(message, { embeds: [embed] });
 		}
-		
 
 		return this.canRunPaginatedMessage(message) ? this.display(message, args, null, context) : this.all(message, context);
 	}
@@ -119,7 +118,7 @@ export class UserCommand extends PyneCommand {
 
 	private formatAliases(aliases: readonly string[]): string | null {
 		if (aliases.length === 0) return null;
-		return aliases.map((alias) => `\`${alias}\``).toString()
+		return aliases.map((alias) => `\`${alias}\``).toString();
 	}
 
 	private formatCommand(prefix: string, paginatedMessage: boolean, command: PyneCommand) {
@@ -168,10 +167,9 @@ export class UserCommand extends PyneCommand {
 	}
 
 	private async buildCommandHelp(command: PyneCommand, prefixUsed: string) {
+		const builder = new CommandHelp();
 
-		const builder = new CommandHelp()
-
-		const extendedHelpData: CommandHelpDisplayOptions = { usages: command.usages }
+		const extendedHelpData: CommandHelpDisplayOptions = { usages: command.usages };
 		const extendedHelp = builder.display(command.name, this.formatAliases(command.aliases), extendedHelpData, prefixUsed);
 
 		const user = this.container.client.user!;
@@ -183,5 +181,4 @@ export class UserCommand extends PyneCommand {
 			.setTitle(command.description)
 			.setDescription(extendedHelp);
 	}
-
 }

@@ -1,0 +1,14 @@
+
+# Distribution files 
+dist/
+
+# Git related folders
+.git/
+.github/
+
+# VSCode folder/files
+.vscode/
+Pyne.code-workspace
+
+# node_modules
+node_modules/

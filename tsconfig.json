@@ -4,16 +4,16 @@
 		"types": ["node"],
 		"lib": ["ESNext.String"],
 		"module": "commonjs",
-			"rootDir": "src",
-			"outDir": "dist",
-			"baseUrl": "src",
-			"composite": true,
-			"paths": {
-				"#lib/*": ["lib/*"],
-				"#utils/*": ["lib/util/*"],
-				"#root/*": ["*"]
-			},
-			"tsBuildInfoFile": "dist/.tsbuildinfo"
+		"rootDir": "src",
+		"outDir": "dist",
+		"baseUrl": "src",
+		"composite": true,
+		"paths": {
+			"#lib/*": ["lib/*"],
+			"#utils/*": ["lib/util/*"],
+			"#root/*": ["*"]
+		},
+		"tsBuildInfoFile": "dist/.tsbuildinfo"
 		},
 	"include": ["src"]
 }

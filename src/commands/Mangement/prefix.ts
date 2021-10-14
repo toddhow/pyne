@@ -10,8 +10,9 @@ import { Message, MessageEmbed } from 'discord.js';
 	description: "Set RSD's prefix",
 	runIn: ['GUILD_ANY'],
 	usages: ['add', 'remove', 'show'],
-	extendedHelp: "This command helps you setting up RSD's prefix. A prefix is an affix that is added in front of the word, in this case, the message.\nIt allows bots to distinguish between a regular message and a command. By nature, the prefix between should be different to avoid conflicts.\nIf you forget RSD's prefix, simply mention her with nothing else and she will tell you the current prefix.\nAlternatively, you can prefix the commands with her name and a comma (for example `RSD, ping`).",
-	examples: ['add $', 'add %', 'remove $', 'remove %', 'show',]
+	extendedHelp:
+		"This command helps you setting up RSD's prefix. A prefix is an affix that is added in front of the word, in this case, the message.\nIt allows bots to distinguish between a regular message and a command. By nature, the prefix between should be different to avoid conflicts.\nIf you forget RSD's prefix, simply mention her with nothing else and she will tell you the current prefix.\nAlternatively, you can prefix the commands with her name and a comma (for example `RSD, ping`).",
+	examples: ['add $', 'add %', 'remove $', 'remove %', 'show']
 })
 export class UserCommand extends PyneSubCommand {
 	@AdministatorOnly()

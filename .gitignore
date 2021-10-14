@@ -1,13 +1,19 @@
 # Ignore a blackhole and the folder for development
 node_modules/
+
+# VSCode folders/files
 .vs/
+.vscode/
 Pyne.code-workspace
+
 .idea/
 *.iml
 
+# Distribution files 
 dist/
 
-pnpm-lock.yml
+# Lock file
+pnpm-lock.ymal
 
 # Environment variables
 .env

@@ -76,7 +76,7 @@ export class UserEvent extends Listener<typeof Events.CommandError> {
 						'` to find out how to use this command.'
 				);
 			default:
-				return this.alert(message, 'pensive');
+				return this.alert(message, error.message);
 		}
 	}
 
@@ -84,8 +84,6 @@ export class UserEvent extends Listener<typeof Events.CommandError> {
 		const prefix = await this.container.client.fetchPrefix(message);
 		const identifier = error.identifier;
 		switch (identifier) {
-			case Identifiers.ArgsUnavailable:
-				return this.alert(message, `Whoops! It seems I couldn't find a parser for a parameter, please contact my developers about it!`);
 			case Identifiers.ArgsMissing:
 				return this.alert(
 					message,
@@ -95,9 +93,8 @@ export class UserEvent extends Listener<typeof Events.CommandError> {
 						piece.name +
 						'` to find out how to use this command.'
 				);
-			default:
 		}
-		return this.alert(message, 'pensive');
+		return this.alert(message, error.message);
 	}
 
 	private alert(message: Message, content: string) {

@@ -79,7 +79,10 @@ export class FuzzySearch<K extends string, V> {
 
 		const n = await promptForMessage(
 			message,
-            `I found multiple matches! **Please select a number within 0 and ${results.length - 1}**:\n${codeBlock('http', results.map(([id, result], i) => `${i} : [ ${id.padEnd(18, ' ')} ] ${this.kAccess(result)}`).join('\n'))}\nWrite **ABORT** if you want to exit the prompt.`
+			`I found multiple matches! **Please select a number within 0 and ${results.length - 1}**:\n${codeBlock(
+				'http',
+				results.map(([id, result], i) => `${i} : [ ${id.padEnd(18, ' ')} ] ${this.kAccess(result)}`).join('\n')
+			)}\nWrite **ABORT** if you want to exit the prompt.`
 		);
 		if (n === null || n.toLowerCase() === 'abort') {
 			throw new UserError({ identifier: 'Successfully aborted the prompt.' });
@@ -87,7 +90,8 @@ export class FuzzySearch<K extends string, V> {
 
 		const parsed = Number(n);
 		if (!Number.isSafeInteger(parsed)) throw new UserError({ identifier: 'That number was out of range, aborting prompt.' });
-		if (parsed < 0 || parsed >= results.length) throw new UserError({ identifier: 'I expected you to give me a (single digit) number, got a potato.' });
+		if (parsed < 0 || parsed >= results.length)
+			throw new UserError({ identifier: 'I expected you to give me a (single digit) number, got a potato.' });
 		return results[parsed];
 	}
 }

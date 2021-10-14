@@ -2,7 +2,7 @@ export class CommandHelp {
 	public display(name: string, aliases: string | null, options: CommandHelpDisplayOptions, prefixUsed: string) {
 		const { usages = [], extendedHelp, explainedUsage = [], examples = [] } = options;
 		const output: string[] = [];
-		
+
 		// Usages
 		if (usages.length) {
 			output.push('📝 | **Command Usage**', ...usages.map((usage) => `→ ${prefixUsed}${name}${usage.length === 0 ? '' : ` *${usage}*`}`), '');
