@@ -26,14 +26,14 @@ export default class UserCommand extends PyneCommand {
 			.setAuthor(message.author.username, message.author.displayAvatarURL())
 			.setColor(0xfcac42)
 			.addField('Ready Timestamp', `<t:${dayjs(container.client.readyTimestamp).unix()}>`, true)
-			.addField('API Latency', endTime - startTime + 'ms', true)
+			.addField('API Latency', `${endTime - startTime}ms`, true)
 			.addField('API Status', status.state, true)
 			.addField('Statistics', this.generalStatistics, true)
 			.addField('Uptime', this.uptimeStatistics, true)
 			.addField('Server Usage', this.usageStatistics, true)
 			.setFooter(`Process ID: ${process.pid} | ${hostname()}`);
 
-		reply(message, { embeds: [embed] });
+		return reply(message, { embeds: [embed] });
 	}
 
 	private get generalStatistics(): string {

@@ -12,3 +12,14 @@ Pyne.code-workspace
 
 # node_modules
 node_modules/
+
+# Rc files
+.eslintrc
+.prettierrc
+
+# Ignore files
+.eslintignore
+.prettierignore
+.gitignore
+
+tsconfig.eslint.json

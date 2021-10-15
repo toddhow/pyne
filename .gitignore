@@ -4,6 +4,7 @@ node_modules/
 # VSCode folders/files
 .vs/
 .vscode/
+
 Pyne.code-workspace
 
 .idea/

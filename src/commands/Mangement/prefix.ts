@@ -1,7 +1,8 @@
 import { AdministatorOnly } from '#lib/decorators/index';
 import { PyneSubCommand } from '#lib/structures';
 import { ApplyOptions } from '@sapphire/decorators';
-import { container, Args } from '@sapphire/framework';
+import { Args } from '@sapphire/framework';
+import { container } from '@sapphire/pieces';
 import { reply } from '@sapphire/plugin-editable-commands';
 import { Message, MessageEmbed } from 'discord.js';
 
@@ -32,6 +33,7 @@ export class UserCommand extends PyneSubCommand {
 		});
 		return reply(message, `Added ${prefix} as a prefix for this server!`);
 	}
+
 	@AdministatorOnly()
 	public async remove(message: Message, args: Args) {
 		const prefix = await args.pick('string');
@@ -49,6 +51,7 @@ export class UserCommand extends PyneSubCommand {
 		await container.db.$executeRaw`UPDATE "GuildSettings" SET prefixes = ${guild.prefixes} WHERE id = ${message.guild!.id}`;
 		return reply(message, `Succefully removed that prefix!`);
 	}
+
 	public async show(message: Message) {
 		const result = await container.db.guildSettings.findUnique({ where: { id: message.guild!.id } });
 		const prefixes = result!.prefixes.toString();
@@ -58,6 +61,6 @@ export class UserCommand extends PyneSubCommand {
 			.setColor('WHITE')
 			.setFooter(`Requested by ${message.member?.displayName}`, message.author.displayAvatarURL({ dynamic: true }))
 			.setTimestamp();
-		reply(message, { embeds: [embed] });
+		return reply(message, { embeds: [embed] });
 	}
 }

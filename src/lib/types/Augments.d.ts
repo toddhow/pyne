@@ -4,13 +4,13 @@ import type { PyneCommand } from '#lib/structures';
 declare module '@sapphire/pieces' {
 	interface Container {
 		db: PrismaClient;
-		api: Function;
+		api: any;
 	}
 }
 
 declare module '@sapphire/framework' {
 	interface SapphireClient {
-		fetchGuildSettings: Function;
+		fetchGuildSettings: any;
 	}
 
 	interface ArgType {

@@ -21,7 +21,7 @@ export class UserCommand extends PyneSubCommand {
 			ban = await get(await args.pick('string'));
 		} catch (error: any) {
 			switch (error) {
-				case error.status == 404:
+				case error.status === 404:
 					return reply(message, 'The specifed user was not found');
 			}
 		}
@@ -43,17 +43,19 @@ export class UserCommand extends PyneSubCommand {
 
 		return reply(message, { embeds: [embed] });
 	}
+
 	@StaffOnly()
 	public async add(message: Message, args: Args) {
 		const user = await args.pick('string');
 		const document = await args.pick('string');
 
 		await add(user, message, document).catch((error) => {
-			reply(message, error);
+			return reply(message, error);
 		});
 
 		return reply(message, `Successfully added <@${user}> to the database.`);
 	}
+
 	@StaffOnly()
 	public async remove(message: Message, args: Args) {
 		const user = await this.container.client.users.fetch(await args.pick('string'));

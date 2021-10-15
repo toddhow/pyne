@@ -5,9 +5,8 @@ import { ApplyOptions } from '@sapphire/decorators';
 import { UserOrMemberMentionRegex } from '@sapphire/discord.js-utilities';
 import { Args, container } from '@sapphire/framework';
 import { reply, send } from '@sapphire/plugin-editable-commands';
-import { CommandHelp } from '#lib/CommandHelp';
+import { CommandHelp, CommandHelpDisplayOptions } from '#lib/CommandHelp';
 import { Collection, Message, MessageEmbed, Permissions } from 'discord.js';
-import type { CommandHelpDisplayOptions } from '#lib/CommandHelp';
 
 const PERMISSIONS_PAGINATED_MESSAGE = new Permissions([
 	Permissions.FLAGS.MANAGE_MESSAGES,
@@ -54,6 +53,17 @@ export class UserCommand extends PyneCommand {
 		return this.canRunPaginatedMessage(message) ? this.display(message, args, null, context) : this.all(message, context);
 	}
 
+	private async buildHelp(message: Message, prefix: string) {
+		const commands = await UserCommand.fetchCommands(message);
+
+		const helpMessage: string[] = [];
+		for (const [category, list] of commands) {
+			helpMessage.push(`**${category} Commands**:\n`, list.map(this.formatCommand.bind(this, prefix, false)).join('\n'), '');
+		}
+
+		return helpMessage.join('\n');
+	}
+
 	private async helpCategories(message: Message, _args: PyneCommand.Args) {
 		const commandsByCategory = await UserCommand.fetchCommands(message);
 		let i = 0;
@@ -67,30 +77,9 @@ export class UserCommand extends PyneCommand {
 		return reply(message, content);
 	}
 
-	private static categories = Args.make<number>(async (parameter, { argument, message }) => {
-		const lowerCasedParameter = parameter.toLowerCase();
-		const commandsByCategory = await UserCommand.fetchCommands(message);
-		for (const [page, category] of [...commandsByCategory.keys()].entries()) {
-			if (category.toLowerCase() === lowerCasedParameter) return Args.ok(page + 1);
-		}
-
-		return Args.error({ argument, parameter });
-	});
-
 	private async all(message: Message, context: PyneCommand.Context) {
 		const content = await this.buildHelp(message, context.commandPrefix);
 		return reply(message, { embeds: [new MessageEmbed().setDescription(content).setColor(BrandingColors.Primary)] });
-	}
-
-	private async buildHelp(message: Message, prefix: string) {
-		const commands = await UserCommand.fetchCommands(message);
-
-		const helpMessage: string[] = [];
-		for (const [category, list] of commands) {
-			helpMessage.push(`**${category} Commands**:\n`, list.map(this.formatCommand.bind(this, prefix, false)).join('\n'), '');
-		}
-
-		return helpMessage.join('\n');
 	}
 
 	private async display(message: Message, _args: PyneCommand.Args, index: number | null, context: PyneCommand.Context) {
@@ -104,6 +93,41 @@ export class UserCommand extends PyneCommand {
 		const response = await reply(message, content);
 		await display.run(response, message.author);
 		return response;
+	}
+
+	private async buildCommandHelp(command: PyneCommand, prefixUsed: string) {
+		const builder = new CommandHelp();
+
+		const extendedHelpData: CommandHelpDisplayOptions = { usages: command.usages };
+		const extendedHelp = builder.display(command.name, this.formatAliases(command.aliases), extendedHelpData, prefixUsed);
+
+		const user = this.container.client.user!;
+		return new MessageEmbed()
+			.setColor('AQUA')
+			.setAuthor(user.username, user.displayAvatarURL({ size: 128, format: 'png' }))
+			.setTimestamp()
+			.setFooter(`Command help for ${command.name}`)
+			.setTitle(command.description)
+			.setDescription(extendedHelp);
+	}
+
+	private async buildDisplay(message: Message, prefix: string) {
+		const commandsByCategory = await UserCommand.fetchCommands(message);
+
+		const display = new PynePaginatedMessage(
+			{
+				template: new MessageEmbed().setColor(BrandingColors.Primary)
+			},
+			10 * 6000
+		);
+
+		for (const [category, commands] of commandsByCategory) {
+			display.addPageEmbed((embed) =>
+				embed.setTitle(`${category} Commands`).setDescription(commands.map(this.formatCommand.bind(this, prefix, true)).join('\n'))
+			);
+		}
+
+		return display;
 	}
 
 	private canRunPaginatedMessage(message: Message) {
@@ -126,6 +150,16 @@ export class UserCommand extends PyneCommand {
 		return paginatedMessage ? `• ${prefix}${command.name}: ${description}` : `• **${prefix}${command.name}**: ${description}`;
 	}
 
+	private static categories = Args.make<number>(async (parameter, { argument, message }) => {
+		const lowerCasedParameter = parameter.toLowerCase();
+		const commandsByCategory = await UserCommand.fetchCommands(message);
+		for (const [page, category] of [...commandsByCategory.keys()].entries()) {
+			if (category.toLowerCase() === lowerCasedParameter) return Args.ok(page + 1);
+		}
+
+		return Args.error({ argument, parameter });
+	});
+
 	private static async fetchCommands(message: Message) {
 		const commands = container.stores.get('commands');
 		const filtered = new Collection<string, PyneCommand[]>();
@@ -145,40 +179,5 @@ export class UserCommand extends PyneCommand {
 		);
 
 		return filtered.sort(sortCommandsAlphabetically);
-	}
-
-	private async buildDisplay(message: Message, prefix: string) {
-		const commandsByCategory = await UserCommand.fetchCommands(message);
-
-		const display = new PynePaginatedMessage(
-			{
-				template: new MessageEmbed().setColor(BrandingColors.Primary)
-			},
-			10 * 6000
-		);
-
-		for (const [category, commands] of commandsByCategory) {
-			display.addPageEmbed((embed) =>
-				embed.setTitle(`${category} Commands`).setDescription(commands.map(this.formatCommand.bind(this, prefix, true)).join('\n'))
-			);
-		}
-
-		return display;
-	}
-
-	private async buildCommandHelp(command: PyneCommand, prefixUsed: string) {
-		const builder = new CommandHelp();
-
-		const extendedHelpData: CommandHelpDisplayOptions = { usages: command.usages };
-		const extendedHelp = builder.display(command.name, this.formatAliases(command.aliases), extendedHelpData, prefixUsed);
-
-		const user = this.container.client.user!;
-		return new MessageEmbed()
-			.setColor('AQUA')
-			.setAuthor(user.username, user.displayAvatarURL({ size: 128, format: 'png' }))
-			.setTimestamp()
-			.setFooter(`Command help for ${command.name}`)
-			.setTitle(command.description)
-			.setDescription(extendedHelp);
 	}
 }

@@ -1,0 +1,32 @@
+{
+	"extends": ["@sapphire", "prettier"],
+	"plugins": ["prettier"],
+	"rules": {
+		"@typescript-eslint/no-base-to-string": 0,
+		"@typescript-eslint/no-throw-literal": 0,
+		"prettier/prettier": ["error"]
+	},
+	"parserOptions": {
+		"warnOnUnsupportedTypeScriptVersion": false
+	},
+	"overrides": [
+		{
+			"files": ["src/commands/**/*.ts", "**/jest.config.ts"],
+			"rules": {
+				"@typescript-eslint/require-await": 0
+			}
+		},
+		{
+			"files": ["src/lib/structures/*.ts"],
+			"rules": {
+				"@typescript-eslint/no-namespace": 0
+			}
+		},
+		{
+			"files": ["src/lib/types/definitions/*.ts"],
+			"rules": {
+				"@typescript-eslint/no-namespace": 0
+			}
+		}
+	]
+}

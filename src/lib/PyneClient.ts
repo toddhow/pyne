@@ -27,19 +27,18 @@ export class PyneClient extends SapphireClient {
 			where: { id: resolved }
 		});
 		if (!result) {
-			return await container.db.guildSettings.create({ data: { id: resolved } });
-		} else {
-			return result;
+			return container.db.guildSettings.create({ data: { id: resolved } });
 		}
+		return result;
 	};
 
-	public start = async () => {
+	public async start() {
 		const response = await super.login();
 		return response;
-	};
+	}
 
-	public destroy = async () => {
+	public async destroy() {
 		await container.db.$disconnect();
 		return super.destroy();
-	};
+	}
 }

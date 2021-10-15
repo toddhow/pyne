@@ -62,18 +62,14 @@ export class UserEvent extends Listener<typeof Events.CommandError> {
 
 	private async argumentError(message: Message, error: ArgumentError<unknown>, piece: Command) {
 		const prefix = await this.container.client.fetchPrefix(message);
-		const identifier = error.identifier;
+		const { identifier } = error;
 		switch (identifier) {
 			case Identifiers.ArgsUnavailable:
 				return this.alert(message, `Whoops! It seems I couldn't find a parser for a parameter, please contact my developers about it!`);
 			case Identifiers.ArgsMissing:
 				return this.alert(
 					message,
-					'You need to write another parameter!\n\n> **Tip**: You can do `' +
-						prefix +
-						'help ' +
-						piece.name +
-						'` to find out how to use this command.'
+					`You need to write another parameter!\n\n> **Tip**: You can do \`${prefix}help ${piece.name}\` to find out how to use this command.`
 				);
 			default:
 				return this.alert(message, error.message);
@@ -82,16 +78,12 @@ export class UserEvent extends Listener<typeof Events.CommandError> {
 
 	private async userError(message: Message, error: UserError, piece: Command) {
 		const prefix = await this.container.client.fetchPrefix(message);
-		const identifier = error.identifier;
+		const { identifier } = error;
 		switch (identifier) {
 			case Identifiers.ArgsMissing:
 				return this.alert(
 					message,
-					'You need to write another parameter!\n\n> **Tip**: You can do `' +
-						prefix +
-						'help ' +
-						piece.name +
-						'` to find out how to use this command.'
+					`You need to write another parameter!\n\n> **Tip**: You can do \`${prefix}help ${piece.name}\` to find out how to use this command.`
 				);
 		}
 		return this.alert(message, error.message);

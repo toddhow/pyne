@@ -1,6 +1,5 @@
-import type { ListenerOptions, PieceContext } from '@sapphire/framework';
 import type { PresenceData } from 'discord.js';
-import { Listener, Store } from '@sapphire/framework';
+import { Listener, Store, ListenerOptions, PieceContext } from '@sapphire/framework';
 import { blue, gray, green, magenta, magentaBright, white, yellow } from 'colorette';
 import { CLIENT_OPTIONS } from '../config';
 import { fetchGuildCount, fetchUserCount } from '#utils/functions';
@@ -20,6 +19,7 @@ export class UserEvent extends Listener {
 	public run() {
 		this.printBanner();
 		this.printStoreDebugInformation();
+		// eslint-disable-next-line @typescript-eslint/no-floating-promises
 		this.startActivityDisplay();
 	}
 
@@ -78,8 +78,8 @@ ${line03}${dev ? ` ${pad}${blc('<')}${llc('/')}${blc('>')} ${llc('DEVELOPMENT MO
 			}
 		];
 
-		setInterval(async () => {
-			let activity = activites![Math.floor(Math.random() * activites!.length)];
+		setInterval(() => {
+			const activity = activites![Math.floor(Math.random() * activites!.length)];
 
 			this.container.client.user?.setActivity(activity);
 		}, 20000);

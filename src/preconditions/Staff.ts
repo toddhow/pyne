@@ -6,7 +6,7 @@ export class Staff extends Precondition {
 		if (!message.guild) {
 			return this.error({ message: 'This cannot be run in dms' });
 		}
-		return message.member!.roles.cache.some((role) => role.id == '873734280918990888')
+		return message.member!.roles.cache.some((role) => role.id === '873734280918990888')
 			? this.ok()
 			: this.error({ message: 'This command can only run by RSD staff memebers!' });
 	}

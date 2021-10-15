@@ -8,7 +8,7 @@ import { container } from '@sapphire/framework';
 export async function fetchGuildCount(): Promise<string> {
 	await container.client.guilds.fetch();
 
-	return container.client.guilds.cache.size.toString();
+	return Promise.resolve(container.client.guilds.cache.size.toString());
 }
 
 /**
@@ -16,6 +16,6 @@ export async function fetchGuildCount(): Promise<string> {
  *
  * @returns The amount of users in every guild.
  */
-export async function fetchUserCount(): Promise<string> {
-	return container.client.users.cache.size.toString();
+export function fetchUserCount(): Promise<string> {
+	return Promise.resolve(container.client.users.cache.size.toString());
 }
