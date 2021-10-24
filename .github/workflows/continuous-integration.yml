@@ -19,6 +19,8 @@ jobs:
           node-version: 16
       - name: Setup PNPM
         uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.0.2
       - name: Restore CI Cache
         uses: actions/cache@v2.1.6
         id: cache-restore
