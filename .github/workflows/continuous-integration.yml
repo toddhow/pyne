@@ -28,4 +28,4 @@ jobs:
         if: ${{ !steps.cache-restore.outputs.cache-hit }}
         run: pnpm ci
       - name: Run Prettier
-        run: pnpm run format:check
+        run: pnpm run format
