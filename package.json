@@ -22,13 +22,12 @@
 		"@sapphire/type": "^2.1.0",
 		"@sapphire/utilities": "3.0.3",
 		"@skyra/editable-commands": "^2.1.0",
-		"axios": "^0.23.0",
+		"axios": "^0.22.0",
 		"colorette": "^2.0.13",
 		"dayjs": "^1.10.7",
 		"discord.js": "^13.1.0",
 		"dotenv-cra": "^3.0.2",
-		"reflect-metadata": "^0.1.13",
-		"sapphire": "^0.0.3"
+		"reflect-metadata": "^0.1.13"
 	},
 	"devDependencies": {
 		"@sapphire/eslint-config": "^4.0.0",
@@ -58,8 +57,13 @@
 		"format": "prettier --write --loglevel=warn \"src/**/*.{js,ts,json}\"",
 		"lint": "eslint --fix --ext ts src"
 	},
+	"engines": {
+		"node": "^16",
+		"npm": "^7"
+	},
 	"prettier": "@sapphire/prettier-config",
 	"prisma": {
 		"schema": "prisma/schema.prisma"
-	}
+	},
+	"packageManager": "pnpm@6.19.0"
 }
