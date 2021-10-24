@@ -11,6 +11,7 @@ jobs:
     name: Formatting
     runs-on: ubuntu-latest
     steps:
+      - uses: pnpm/action-setup@v2
       - name: Checkout Project
         uses: actions/checkout@v2
       - name: Use Node.js v16
@@ -25,6 +26,6 @@ jobs:
           key: ${{ runner.os }}-16-${{ hashFiles('**/package-lock.json') }}
       - name: Install Dependencies if Cache Miss
         if: ${{ !steps.cache-restore.outputs.cache-hit }}
-        run: npm ci
+        run: pnpm ci
       - name: Run Prettier
-        run: npm run format:check
+        run: pnpm run format
