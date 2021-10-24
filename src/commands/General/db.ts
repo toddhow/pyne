@@ -4,7 +4,7 @@ import { ApplyOptions } from '@sapphire/decorators';
 import { Args } from '@sapphire/framework';
 import { reply } from '@sapphire/plugin-editable-commands';
 import { Message, MessageEmbed } from 'discord.js';
-import { get, add, remove } from '#lib/api';
+import { get, add, remove } from '#lib/api/managers/ban';
 import dayjs from 'dayjs';
 import type { Ban } from '#lib/types';
 

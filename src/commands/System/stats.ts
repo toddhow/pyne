@@ -5,6 +5,7 @@ import { PyneCommand } from '#lib/structures';
 import { DurationFormatAssetsTime, friendlyDuration, TimeTypes } from '#utils/FriendlyDuration';
 import { Message, MessageEmbed, version } from 'discord.js';
 import { reply } from '@sapphire/plugin-editable-commands';
+import { get } from '#lib/api/managers/status';
 import dayjs from 'dayjs';
 import { cpus, uptime, hostname } from 'os';
 
@@ -15,11 +16,11 @@ import { cpus, uptime, hostname } from 'os';
 })
 export default class UserCommand extends PyneCommand {
 	@BotOwnerOnly()
-	public async run(message: Message) {
+	public async messageRun(message: Message) {
 		// eslint-disable-next-line prettier/prettier
 
 		const startTime = Date.now();
-		const status = (await this.container.api('GET', 'v1/status')).data;
+		const status = await get();
 		const endTime = Date.now();
 
 		const embed = new MessageEmbed()
