@@ -55,8 +55,7 @@
 		"start": "node dist/index.js",
 		"dev": "run-s build start",
 		"format": "prettier --write --loglevel=warn \"src/**/*.{js,ts,json}\"",
-		"lint": "eslint --fix --ext ts src",
-		"prepare": "husky install .github/husky"
+		"lint": "eslint --fix --ext ts src"
 	},
 	"engines": {
 		"node": "^16",
