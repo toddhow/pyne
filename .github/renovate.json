@@ -1,5 +1,5 @@
 {
-	"extends": ["github>sapphiredev/readme:sapphire-renovate"],
+  "extends": ["github>sapphiredev/readme:sapphire-renovate"],
   "constraints": {
     "pnpm": "latest"
   }
