@@ -1,5 +1,4 @@
-import { SapphireClient } from '@sapphire/framework';
-import { container } from '@sapphire/pieces';
+import { SapphireClient, container } from '@sapphire/framework';
 import type { Message, GuildResolvable } from 'discord.js';
 import { isGuildMessage } from '#utils/common';
 import { CLIENT_OPTIONS } from '../config';

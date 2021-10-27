@@ -1,5 +1,5 @@
 import './lib/setup';
-import { container } from '@sapphire/pieces';
+import { container } from '@sapphire/framework';
 import { PyneClient } from './lib/PyneClient';
 import { PrismaClient } from '@prisma/client';
 
