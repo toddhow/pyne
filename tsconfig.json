@@ -1,7 +1,6 @@
 {
 	"extends": "@sapphire/ts-config/tsconfig",
 	"compilerOptions": {
-		"types": ["node"],
 		"lib": ["ESNext.String"],
 		"module": "commonjs",
 		"rootDir": "src",

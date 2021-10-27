@@ -1,10 +1,11 @@
+import type { PyneClient } from '#lib/PyneClient';
 import type { PrismaClient } from '@prisma/client';
 import type { PyneCommand } from '#lib/structures';
 
 declare module '@sapphire/pieces' {
 	interface Container {
+		client: PyneClient;
 		db: PrismaClient;
-		api: any;
 	}
 }
 
@@ -19,5 +20,3 @@ declare module '@sapphire/framework' {
 		commandName: PyneCommand;
 	}
 }
-
-export {};

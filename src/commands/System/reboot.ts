@@ -10,7 +10,7 @@ import type { Message } from 'discord.js';
 })
 export class UserCommand extends PyneCommand {
 	@BotOwnerOnly()
-	public async run(message: Message) {
+	public async messageRun(message: Message) {
 		await send(message, 'Rebooting...').catch((error) => this.container.logger.fatal(error));
 
 		process.exit(0);

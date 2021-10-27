@@ -1,4 +1,5 @@
-import { SapphireClient, container } from '@sapphire/framework';
+import { SapphireClient } from '@sapphire/framework';
+import { container } from '@sapphire/pieces';
 import type { Message, GuildResolvable } from 'discord.js';
 import { isGuildMessage } from '#utils/common';
 import { CLIENT_OPTIONS } from '../config';
@@ -33,8 +34,7 @@ export class PyneClient extends SapphireClient {
 	};
 
 	public async start() {
-		const response = await super.login();
-		return response;
+		await super.login();
 	}
 
 	public async destroy() {

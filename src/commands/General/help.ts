@@ -31,7 +31,7 @@ function sortCommandsAlphabetically(_: PyneCommand[], __: PyneCommand[], firstCa
 	examples: ['--cat', '--all', 'General', '2', 'help']
 })
 export class UserCommand extends PyneCommand {
-	public async run(message: Message, args: PyneCommand.Args, context: PyneCommand.Context) {
+	public async messageRun(message: Message, args: PyneCommand.Args, context: PyneCommand.Context) {
 		if (args.finished) {
 			if (args.getFlags('cat', 'categories')) return this.helpCategories(message, args);
 			if (args.getFlags('all')) return this.all(message, context);

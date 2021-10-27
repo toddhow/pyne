@@ -13,9 +13,6 @@ Pyne.code-workspace
 # Distribution files 
 dist/
 
-# Lock file
-pnpm-lock.ymal
-
 # Environment variables
 .env
 .env.local

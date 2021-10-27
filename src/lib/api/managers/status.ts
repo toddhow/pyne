@@ -1,8 +1,7 @@
 import type { AxiosResponse } from 'axios';
-import type { ApiStatus } from '#lib/types';
 import { applicationAdapter } from '../';
 
-export async function get(): Promise<ApiStatus> {
+export async function get(): Promise<any> {
 	let result: AxiosResponse<any>;
 	try {
 		result = await applicationAdapter.get(`v1/status`);
