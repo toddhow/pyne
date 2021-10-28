@@ -18,7 +18,7 @@
 		"@sapphire/plugin-subcommands": "next",
 		"@sapphire/snowflake": "^2.1.3",
 		"@sapphire/time-utilities": "next",
-		"@sapphire/type": "^2.1.1",
+		"@sapphire/type": "2.1.1",
 		"@sapphire/utilities": "3.0.5",
 		"@skyra/editable-commands": "^2.1.0",
 		"axios": "^0.24.0",
@@ -26,7 +26,6 @@
 		"dayjs": "^1.10.7",
 		"discord.js": "^13.2.0",
 		"dotenv-cra": "^3.0.2",
-		"husky": "7.0.4",
 		"reflect-metadata": "^0.1.13"
 	},
 	"devDependencies": {

@@ -17,7 +17,7 @@ specifiers:
   '@sapphire/snowflake': ^2.1.3
   '@sapphire/time-utilities': next
   '@sapphire/ts-config': ^3.1.3
-  '@sapphire/type': ^2.1.1
+  '@sapphire/type': 2.1.1
   '@sapphire/utilities': 3.0.5
   '@skyra/editable-commands': ^2.1.0
   '@types/node': ^16.11.6
@@ -32,7 +32,6 @@ specifiers:
   eslint: ^8.1.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-prettier: ^4.0.0
-  husky: 7.0.4
   npm-run-all: ^4.1.5
   prettier: ^2.4.1
   prisma: ^3.3.0
@@ -55,7 +54,7 @@ dependencies:
   '@sapphire/plugin-logger': 2.0.2-next.8663c865.0
   '@sapphire/plugin-subcommands': 2.0.2-next.8663c865.0
   '@sapphire/snowflake': 2.1.3
-  '@sapphire/time-utilities': 1.4.5-next.ed7189a8.0
+  '@sapphire/time-utilities': 1.4.6-next.d3aeed16.0
   '@sapphire/type': 2.1.1
   '@sapphire/utilities': 3.0.5
   '@skyra/editable-commands': 2.1.0
@@ -64,7 +63,6 @@ dependencies:
   dayjs: 1.10.7
   discord.js: 13.2.0
   dotenv-cra: 3.0.2
-  husky: 7.0.4
   reflect-metadata: 0.1.13
 
 devDependencies:
@@ -349,11 +347,11 @@ packages:
       '@sapphire/utilities': 3.0.5
     dev: false
 
-  /@sapphire/time-utilities/1.4.5-next.ed7189a8.0:
-    resolution: {integrity: sha512-IFyFdA0OHMa1ZQpYvqqJZfSFOzAJ6vz/j1OLKBDAAOlc3pBxSqRLekB6bGm5VjkebKp1MbMmtPxH1M0OcC/BBQ==}
+  /@sapphire/time-utilities/1.4.6-next.d3aeed16.0:
+    resolution: {integrity: sha512-gwqHiGvcmSYl6O+09oIUbzCTIzwdMhcvJTgnsKpqNR+sggVSh6vPqTVO04ev/xiQUN5/LX+RKb3puUtpNLjdew==}
     engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
     dependencies:
-      '@sapphire/utilities': 3.0.5
+      '@sapphire/utilities': 3.0.6-next.d3aeed16.0
     dev: false
 
   /@sapphire/ts-config/3.1.3:
@@ -378,6 +376,11 @@ packages:
 
   /@sapphire/utilities/3.0.5:
     resolution: {integrity: sha512-JLyxPi0NheNUfA7T6WQUF00mv3/xJTjuBUEEAxficPgbLztl0FCQ17WygtfLVnnNiDoCpKwqFHyOCUW3SUDeRg==}
+    engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
+    dev: false
+
+  /@sapphire/utilities/3.0.6-next.d3aeed16.0:
+    resolution: {integrity: sha512-O/dSHulYzxj00JdGPT1YJFsi7sbjwZtrhKVHZF3eFX0B6bxOwt+YakSL16jqf/n8CWp2VXypnsCsnuBFI/fyHw==}
     engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
     dev: false
 
@@ -1400,12 +1403,6 @@ packages:
       debug: 4.3.2
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /husky/7.0.4:
-    resolution: {integrity: sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==}
-    engines: {node: '>=12'}
-    hasBin: true
     dev: false
 
   /ignore/4.0.6:

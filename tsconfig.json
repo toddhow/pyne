@@ -1,8 +1,6 @@
 {
 	"extends": "@sapphire/ts-config/tsconfig",
 	"compilerOptions": {
-		"lib": ["ESNext.String"],
-		"module": "commonjs",
 		"rootDir": "src",
 		"outDir": "dist",
 		"baseUrl": "src",

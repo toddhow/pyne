@@ -1,5 +1,4 @@
-import { Listener, Events } from '@sapphire/framework';
-import { container } from '@sapphire/pieces';
+import { Listener, Events, container } from '@sapphire/framework';
 import type { Guild } from 'discord.js';
 
 export class GuildCreate extends Listener<typeof Events.GuildCreate> {
