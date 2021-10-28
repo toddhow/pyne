@@ -33,7 +33,8 @@ export class PyneClient extends SapphireClient {
 	};
 
 	public async start() {
-		await super.login();
+		const response = await super.login();
+		return response;
 	}
 
 	public async destroy() {
