@@ -5,7 +5,7 @@ node_modules/
 .vs/
 .vscode/
 
-Pyne.code-workspace
+*.code-workspace
 
 .idea/
 *.iml
