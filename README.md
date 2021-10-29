@@ -1,1 +1,1 @@
-# Pyne [![Discord](https://discord.com/api/guilds/254360814063058944/embed.png)](https://discord.gg/RCaXQEFTyt)
+# Pyne [![Discord](https://discord.com/api/guilds/770351603428491274/embed.png)](https://discord.gg/RCaXQEFTyt)
