@@ -2,7 +2,7 @@ version: '2.4'
 services:
   postgres:
     container_name: postgres
-    image: 'pyne/postgres:latest'
+    image: 'toddhow/postgres:main'
     networks:
       pyne:
     ports:
@@ -10,26 +10,6 @@ services:
     restart: always
     volumes:
       - 'postgres-data:/var/lib/postgresql/data'
-
-  pyne:
-    build:
-      context: ../
-    container_name: pyne
-    links:
-      - postgres
-    depends_on:
-      - postgres
-    env_file:
-      - ../.env
-    image: 'pyne/bot:latest'
-    networks:
-      pyne:
-    ports:
-      - '8282:8282'
-      - '7282:7282'
-    restart: always
-    tty: true
-    command: 'yarn db:prod'
 
 volumes:
   postgres-data:
