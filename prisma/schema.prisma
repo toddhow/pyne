@@ -8,7 +8,7 @@ generator client {
 }
 
 model GuildSettings {
-  id                String    @unique
+  id                String    @id
   prefixes          String[]
   disabledChannels  String[]
 }

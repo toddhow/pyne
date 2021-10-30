@@ -6,11 +6,19 @@ import { PrismaClient } from '@prisma/client';
 const client = new PyneClient();
 
 async function main() {
-	container.db = new PrismaClient();
+	try {
+		// Connect to the Database
+		container.db = new PrismaClient();
 
-	client.logger.info('Logging in');
-	await client.start();
-	client.logger.info('logged in');
+		// Login to the Discord gateway
+		await client.start().then(() => {
+			client.logger.info('Logged in');
+		});
+	} catch (error) {
+		container.logger.error(error);
+		await client.destroy();
+		process.exit(1);
+	}
 }
 
 main().catch(container.logger.error.bind(container.logger));

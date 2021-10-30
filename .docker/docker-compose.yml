@@ -4,12 +4,29 @@ services:
     container_name: postgres
     image: 'toddhow/postgres:main'
     networks:
-      pyne:
+      - pyne
     ports:
       - '5432:5432'
     restart: always
     volumes:
       - 'postgres-data:/var/lib/postgresql/data'
+
+  pyne:
+    build:
+      context: ../
+    container_name: pyne
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    image: 'toddhow/pyne:main'
+    networks:
+      - pyne
+    ports:
+      - '8282:8282'
+      - '7282:7282'
+    restart: always
+    tty: true
 
 volumes:
   postgres-data:

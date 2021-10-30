@@ -10,7 +10,7 @@ ENV CI=true
 
 RUN apt-get update && \
     apt-get upgrade -y --no-install-recommends && \
-    apt-get install -y --no-install-recommends build-essential python3 libfontconfig1 && \
+    apt-get install -y --no-install-recommends build-essential python3 libfontconfig1 dumb-init && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -19,6 +19,8 @@ COPY --chown=node:node package.json .
 COPY --chown=node:node .yarnrc.yml .
 COPY --chown=node:node .yarn/ .yarn/
 COPY --chown=node:node prisma/ prisma/
+
+ENTRYPOINT ["dumb-init", "--"]
 
 # ================ #
 #   Builder Stage  #
@@ -48,6 +50,7 @@ COPY --chown=node:node .env .env
 COPY --chown=node:node --from=builder /usr/src/app/dist dist
 
 RUN yarn workspaces focus --all --production
+RUN yarn prisma generate
 
 USER node
 
