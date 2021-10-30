@@ -2,9 +2,9 @@ version: '2.4'
 services:
   postgres:
     container_name: postgres
-    image: 'skyrabot/postgres:latest'
+    image: 'pyne/postgres:latest'
     networks:
-      - pyne
+      pyne:
     ports:
       - '5432:5432'
     restart: always
@@ -15,20 +15,21 @@ services:
     build:
       context: ../
     container_name: pyne
+    links:
+      - postgres
     depends_on:
       - postgres
     env_file:
       - ../.env
-    image: 'pyne:latest'
+    image: 'pyne/bot:latest'
     networks:
-      - pyne
+      pyne:
     ports:
       - '8282:8282'
       - '7282:7282'
-    volumes:
-      - /usr/src/app/node_modules
     restart: always
     tty: true
+    command: 'yarn db:prod'
 
 volumes:
   postgres-data:

@@ -5,7 +5,7 @@ import { PrismaClient } from '@prisma/client';
 
 const client = new PyneClient();
 
-async function start() {
+async function main() {
 	container.db = new PrismaClient();
 
 	client.logger.info('Logging in');
@@ -13,6 +13,4 @@ async function start() {
 	client.logger.info('logged in');
 }
 
-start().catch((error) => {
-	client.logger.info(error);
-});
+main().catch(container.logger.error.bind(container.logger));
