@@ -1,7 +1,7 @@
 import './lib/setup';
 import { container } from '@sapphire/framework';
-import { PyneClient } from './lib/PyneClient';
 import { PrismaClient } from '@prisma/client';
+import { PyneClient } from './lib/PyneClient';
 
 const client = new PyneClient();
 

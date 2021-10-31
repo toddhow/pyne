@@ -8,10 +8,6 @@ declare module '@sapphire/pieces' {
 }
 
 declare module '@sapphire/framework' {
-	interface SapphireClient {
-		fetchGuildSettings: any;
-	}
-
 	interface ArgType {
 		command: PyneCommand;
 		commandMatch: string;

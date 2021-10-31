@@ -34,4 +34,4 @@ jobs:
           push: true
           context: .
           tags: |
-            ghcr.io/toddhow/pyne:latest
+            ghcr.io/toddhow/pyne:main
