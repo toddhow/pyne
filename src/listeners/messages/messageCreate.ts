@@ -1,5 +1,6 @@
 import { Listener, Events } from '@sapphire/framework';
 import type { Message } from 'discord.js';
+import { settingsManager } from '#lib/database';
 
 export class UserListener extends Listener<typeof Events.MessageCreate> {
 	public async run(message: Message) {
@@ -12,6 +13,6 @@ export class UserListener extends Listener<typeof Events.MessageCreate> {
 		// If the message was sent by a bot, return:
 		if (message.author.bot) return;
 
-		if (message.guild) await this.container.client.fetchGuildSettings(message.guild);
+		if (message.guild) await settingsManager.fetchGuildSettings(message.guild);
 	}
 }
