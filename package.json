@@ -5,7 +5,7 @@
 	"author": "toddhow",
 	"license": "GPL-3.0-or-later",
 	"dependencies": {
-		"@discordjs/collection": "^0.2.4",
+		"@discordjs/collection": "^0.3.2",
 		"@prisma/client": "^3.3.0",
 		"@sapphire/decorators": "next",
 		"@sapphire/discord-utilities": "2.2.2",
