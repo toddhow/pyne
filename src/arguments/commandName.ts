@@ -1,6 +1,6 @@
 import type { PyneCommand } from '#lib/structures';
 import { PermissionLevels } from '#lib/types/Enums';
-import { Owners } from '#root/config';
+import { OWNERS } from '#root/config';
 import { FuzzySearch } from '#utils/Parsers/FuzzySearch';
 import { Argument, ArgumentContext, Command } from '@sapphire/framework';
 
@@ -30,7 +30,7 @@ export class UserArgument extends Argument<Command> {
 
 	private isAllowed(command: PyneCommand, context: CommandArgumentContext): boolean {
 		if (command.permissionLevel !== PermissionLevels.BotOwner) return true;
-		return context.owners ?? Owners.includes(context.message.author.id);
+		return context.owners ?? OWNERS.includes(context.message.author.id);
 	}
 }
 

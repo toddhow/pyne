@@ -1,4 +1,4 @@
-import { BotOwnerOnly } from '#lib/decorators/index';
+import { BotOwnerOnly } from '#lib/database/decorators/index';
 import { ApplyOptions } from '@sapphire/decorators';
 import { container } from '@sapphire/framework';
 import { PyneCommand } from '#lib/structures';

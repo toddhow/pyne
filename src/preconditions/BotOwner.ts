@@ -2,7 +2,7 @@ import { Precondition } from '@sapphire/framework';
 import type { Message } from 'discord.js';
 import { envParseArray } from '../lib/env';
 
-const OWNERS = envParseArray('OWNERS');
+const OWNERS = envParseArray('CLIENT_OWNERS');
 
 export class UserPrecondition extends Precondition {
 	public async run(message: Message) {

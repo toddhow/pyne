@@ -1,9 +1,22 @@
 import type { ClientOptions } from 'discord.js';
+import type { ServerOptions } from '@sapphire/plugin-api';
+import { envParseArray, envParseBoolean, envParseInteger, envParseString } from '#lib/env';
 
-export const Owners = ['362007555670671370', '141377956621582338'];
+export const OWNERS = envParseArray('CLIENT_OWNERS');
+
+function parseApi(): ServerOptions | undefined {
+	if (!envParseBoolean('API_ENABLED', false)) return undefined;
+
+	return {
+		prefix: envParseString('API_PREFIX', '/'),
+		origin: envParseString('API_ORIGIN'),
+		listenOptions: { port: envParseInteger('API_PORT') }
+	};
+}
 
 export const CLIENT_OPTIONS: ClientOptions = {
 	allowedMentions: { users: [], roles: [] },
+	api: parseApi(),
 	caseInsensitiveCommands: true,
 	caseInsensitivePrefixes: true,
 	defaultPrefix: '*',

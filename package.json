@@ -58,7 +58,7 @@
 		"dev": "run-s build start",
 		"format": "prettier --write --loglevel=warn \"src/**/*.{js,ts,json}\"",
 		"lint": "eslint --fix --ext ts src",
-		"migrate": "prisma migrate deploy"
+		"migrate": "dotenv -e .env.local -- prisma migrate deploy"
 	},
 	"engines": {
 		"node": "^16",

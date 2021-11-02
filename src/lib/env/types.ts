@@ -8,14 +8,13 @@ export type EnvInteger = { [K in EnvAny]: PyneEnv[K] extends IntegerString ? K :
 
 export interface PyneEnv {
 	NODE_ENV: 'test' | 'development' | 'production';
-	DOTENV_DEBUG_ENABLED: BooleanString;
 
-	OWNERS: string;
-
-	SENTRY_URL: string;
+	CLIENT_OWNERS: string;
 
 	API_ENABLED: BooleanString;
-	API_URL: string;
+	API_ORIGIN: string;
+	API_PORT: IntegerString;
+	API_PREFIX: string;
 
 	DATABASE_URL: string;
 

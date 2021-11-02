@@ -1,5 +1,5 @@
 import { isNullishOrEmpty } from '@sapphire/utilities';
-import type { EnvAny, EnvBoolean, EnvInteger, EnvString } from './types';
+import type { PyneEnv, EnvAny, EnvBoolean, EnvInteger, EnvString } from './types';
 
 export function envParseInteger(key: EnvInteger, defaultValue?: number): number {
 	const value = process.env[key];
@@ -23,6 +23,16 @@ export function envParseBoolean(key: EnvBoolean, defaultValue?: boolean): boolea
 	if (value === 'true') return true;
 	if (value === 'false') return false;
 	throw new Error(`[ENV] ${key} - The key must be a boolean, but received '${value}'.`);
+}
+
+export function envParseString<K extends EnvString>(key: K, defaultValue?: PyneEnv[K]): string {
+	const value = process.env[key];
+	if (isNullishOrEmpty(value)) {
+		if (defaultValue === undefined) throw new Error(`[ENV] ${key} - The key must be a string, but is empty or undefined.`);
+		return defaultValue;
+	}
+
+	return value;
 }
 
 export function envParseArray(key: EnvString, defaultValue?: string[]): string[] {
