@@ -1,4 +1,4 @@
-import { BotOwnerOnly } from '#lib/database/decorators/index';
+import { BotOwnerOnly } from '#lib/decorators';
 import { PyneCommand } from '#lib/structures';
 import { ApplyOptions } from '@sapphire/decorators';
 import { send } from '@sapphire/plugin-editable-commands';
