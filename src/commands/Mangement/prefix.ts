@@ -1,4 +1,4 @@
-import { AdministatorOnly } from '#lib/database/decorators/index';
+import { AdministatorOnly } from '#lib/decorators';
 import { PyneSubCommand } from '#lib/structures';
 import { ApplyOptions } from '@sapphire/decorators';
 import { Args } from '@sapphire/framework';
