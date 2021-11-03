@@ -41,7 +41,7 @@ function Step-Run {
 		switch ($Command) {
 			build { docker-compose -p pyne -f "$($PSScriptRoot)/docker-compose.yml" build $Service }
 			start { docker-compose -p pyne -f "$($PSScriptRoot)/docker-compose.yml" up -d $Service }
-			stop { docker-compose -p pyne -f "$($PSScriptRoot)/docker-compose.yml" down $Service }
+			stop { docker-compose -p pyne -f "$($PSScriptRoot)/docker-compose.yml" stop $Service }
 			logs { docker-compose -p pyne -f "$($PSScriptRoot)/docker-compose.yml" logs $Service }
 			tail { docker-compose -p pyne -f "$($PSScriptRoot)/docker-compose.yml" logs -f $Service }
 			push { docker push $Service }
