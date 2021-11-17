@@ -144,7 +144,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:^3.4.2":
+"@prisma/client@npm:^3.5.0":
   version: 3.5.0
   resolution: "@prisma/client@npm:3.5.0"
   dependencies:
@@ -435,7 +435,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.3.1":
+"@typescript-eslint/eslint-plugin@npm:^5.3.1, @typescript-eslint/eslint-plugin@npm:^5.4.0":
   version: 5.4.0
   resolution: "@typescript-eslint/eslint-plugin@npm:5.4.0"
   dependencies:
@@ -473,7 +473,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.3.1":
+"@typescript-eslint/parser@npm:^5.3.1, @typescript-eslint/parser@npm:^5.4.0":
   version: 5.4.0
   resolution: "@typescript-eslint/parser@npm:5.4.0"
   dependencies:
@@ -2623,7 +2623,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prisma@npm:^3.4.2":
+"prisma@npm:^3.5.0":
   version: 3.5.0
   resolution: "prisma@npm:3.5.0"
   dependencies:
@@ -2696,7 +2696,7 @@ __metadata:
   resolution: "pyne@workspace:."
   dependencies:
     "@discordjs/collection": ^0.3.2
-    "@prisma/client": ^3.4.2
+    "@prisma/client": ^3.5.0
     "@sapphire/decorators": next
     "@sapphire/discord-utilities": 2.2.3
     "@sapphire/discord.js-utilities": ^4.1.2
@@ -2716,8 +2716,8 @@ __metadata:
     "@skyra/editable-commands": ^2.1.0
     "@types/node": ^16.11.7
     "@types/ws": ^8.2.0
-    "@typescript-eslint/eslint-plugin": ^5.3.1
-    "@typescript-eslint/parser": ^5.3.1
+    "@typescript-eslint/eslint-plugin": ^5.4.0
+    "@typescript-eslint/parser": ^5.4.0
     axios: ^0.24.0
     colorette: ^2.0.16
     dayjs: ^1.10.7
@@ -2730,10 +2730,10 @@ __metadata:
     eslint-plugin-prettier: ^4.0.0
     npm-run-all: ^4.1.5
     prettier: ^2.4.1
-    prisma: ^3.4.2
+    prisma: ^3.5.0
     tsc-watch: ^4.5.0
     tslib: ^2.3.1
-    typescript: ^4.4.4
+    typescript: ^4.5.2
   languageName: unknown
   linkType: soft
 
@@ -3339,6 +3339,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:^4.5.2":
+  version: 4.5.2
+  resolution: "typescript@npm:4.5.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 74f9ce65d532bdf5d0214b3f60cf37992180023388c87a11ee6f838a803067ef0b63c600fa501b0deb07f989257dce1e244c9635ed79feca40bbccf6e0aa1ebc
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@^4.4.4#~builtin<compat/typescript>":
   version: 4.4.4
   resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"
@@ -3346,6 +3356,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: bd629ad0da4a15d79aaad56baf3ee7d96f6a181760d430ae77f8c5325df7bffd9edee57544a3970e3651e8b796fe03a5838a7eb39c6d46cc3866c0b23d36a0dd
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.5.2#~builtin<compat/typescript>":
+  version: 4.5.2
+  resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=ddd1e8"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 24a439e062a05e3285a4f0e8a40644116ecdca89f3e908bed01e5a01b9aee747e3bcf0e85fe9e017e5ebf0c0863437c39479f2616f55a244c2d82d37022cdc4f
   languageName: node
   linkType: hard
 

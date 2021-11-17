@@ -18,7 +18,7 @@
 	"license": "GPL-3.0-or-later",
 	"dependencies": {
 		"@discordjs/collection": "^0.3.2",
-		"@prisma/client": "^3.4.2",
+		"@prisma/client": "^3.5.0",
 		"@sapphire/decorators": "next",
 		"@sapphire/discord-utilities": "2.2.3",
 		"@sapphire/discord.js-utilities": "^4.1.2",
@@ -38,7 +38,7 @@
 		"dayjs": "^1.10.7",
 		"discord.js": "^13.3.1",
 		"dotenv-cra": "^3.0.2",
-		"prisma": "^3.4.2"
+		"prisma": "^3.5.0"
 	},
 	"devDependencies": {
 		"@sapphire/eslint-config": "^4.0.5",
@@ -46,8 +46,8 @@
 		"@sapphire/ts-config": "^3.1.4",
 		"@types/node": "^16.11.7",
 		"@types/ws": "^8.2.0",
-		"@typescript-eslint/eslint-plugin": "^5.3.1",
-		"@typescript-eslint/parser": "^5.3.1",
+		"@typescript-eslint/eslint-plugin": "^5.4.0",
+		"@typescript-eslint/parser": "^5.4.0",
 		"discord-api-types": "^0.24.0",
 		"dotenv-cli": "^4.1.0",
 		"eslint": "^8.2.0",
@@ -57,7 +57,7 @@
 		"prettier": "^2.4.1",
 		"tsc-watch": "^4.5.0",
 		"tslib": "^2.3.1",
-		"typescript": "^4.4.4"
+		"typescript": "^4.5.2"
 	},
 	"resolutions": {
 		"ansi-regex": "^5.0.1"
