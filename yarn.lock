@@ -197,7 +197,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/discord.js-utilities@npm:^4.1.1":
+"@sapphire/discord.js-utilities@npm:^4.1.1, @sapphire/discord.js-utilities@npm:^4.1.2":
   version: 4.1.2
   resolution: "@sapphire/discord.js-utilities@npm:4.1.2"
   dependencies:
@@ -209,7 +209,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/eslint-config@npm:^4.0.4":
+"@sapphire/eslint-config@npm:^4.0.5":
   version: 4.0.5
   resolution: "@sapphire/eslint-config@npm:4.0.5"
   dependencies:
@@ -367,14 +367,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:3.0.7":
-  version: 3.0.7
-  resolution: "@sapphire/utilities@npm:3.0.7"
-  checksum: 780a3a0e3cc39cb79d5c7dd43abb9d7f481767b60e6f1f1a69f9faf963148ef4af68fac1a6cc04686b6c4560037535ee04410c042f8f7eca0c310ef98ba28f3b
-  languageName: node
-  linkType: hard
-
-"@sapphire/utilities@npm:^3.0.6, @sapphire/utilities@npm:^3.0.7, @sapphire/utilities@npm:^3.0.8, @sapphire/utilities@npm:^3.0.8-next.75965f6.0":
+"@sapphire/utilities@npm:3.0.8, @sapphire/utilities@npm:^3.0.6, @sapphire/utilities@npm:^3.0.7, @sapphire/utilities@npm:^3.0.8, @sapphire/utilities@npm:^3.0.8-next.75965f6.0":
   version: 3.0.8
   resolution: "@sapphire/utilities@npm:3.0.8"
   checksum: 44cdb0150a233f974b3c6a877f274f3bcebc3efad3cef6205cba5963ad1f60340d57eff54c8206eb638b881a3c3b33d8d593b6c71307768435da8ff05c9ac730
@@ -2706,8 +2699,8 @@ __metadata:
     "@prisma/client": ^3.4.2
     "@sapphire/decorators": next
     "@sapphire/discord-utilities": 2.2.3
-    "@sapphire/discord.js-utilities": ^4.1.1
-    "@sapphire/eslint-config": ^4.0.4
+    "@sapphire/discord.js-utilities": ^4.1.2
+    "@sapphire/eslint-config": ^4.0.5
     "@sapphire/fetch": next
     "@sapphire/framework": ^2.1.4
     "@sapphire/plugin-api": next
@@ -2719,7 +2712,7 @@ __metadata:
     "@sapphire/time-utilities": next
     "@sapphire/ts-config": ^3.1.4
     "@sapphire/type": 2.1.2
-    "@sapphire/utilities": 3.0.7
+    "@sapphire/utilities": 3.0.8
     "@skyra/editable-commands": ^2.1.0
     "@types/node": ^16.11.7
     "@types/ws": ^8.2.0
