@@ -1,3 +1,3 @@
 export * from './BotOwnerOnly';
 export * from './AdministratorOnly';
-export * from './StaffOnly';
+export * from './ModeratorOnly';

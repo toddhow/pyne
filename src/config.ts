@@ -1,12 +1,10 @@
 import type { ClientOptions } from 'discord.js';
 import type { ServerOptions } from '@sapphire/plugin-api';
-import { envParseArray, envParseBoolean, envParseInteger, envParseString } from '#lib/env';
+import { envParseArray, envParseInteger, envParseString } from '#lib/env';
 
 export const OWNERS = envParseArray('CLIENT_OWNERS');
 
 function parseApi(): ServerOptions | undefined {
-	if (!envParseBoolean('API_ENABLED', false)) return undefined;
-
 	return {
 		prefix: envParseString('API_PREFIX', '/'),
 		origin: envParseString('API_ORIGIN'),
