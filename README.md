@@ -1,5 +1,12 @@
 <div align="center">
   
-# Pyne [![Discord](https://discord.com/api/guilds/770351603428491274/embed.png)](https://discord.gg/RCaXQEFTyt)
+# Pyne [![Discord](https://discord.com/api/guilds/914242706132324362/embed.png)](https://discord.gg/aDxgX9q7J6)
   
 </div>
+
+## Setting up Pyne
+
+### Requirements
+
+-   [`Node.js`]: To run the project.
+-   [`PostgreSQL`]: To store persistent data.
