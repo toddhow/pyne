@@ -5,7 +5,6 @@ import { PyneCommand } from '#lib/structures';
 import { DurationFormatAssetsTime, friendlyDuration, TimeTypes } from '#utils/FriendlyDuration';
 import { Message, MessageEmbed, version } from 'discord.js';
 import { reply } from '@sapphire/plugin-editable-commands';
-import { get } from '#lib/api/managers/status';
 import dayjs from 'dayjs';
 import { cpus, uptime, hostname } from 'os';
 
@@ -19,16 +18,10 @@ export default class UserCommand extends PyneCommand {
 	public async messageRun(message: Message) {
 		// eslint-disable-next-line prettier/prettier
 
-		const startTime = Date.now();
-		const status = await get();
-		const endTime = Date.now();
-
 		const embed = new MessageEmbed()
 			.setAuthor(message.author.username, message.author.displayAvatarURL())
 			.setColor(0xfcac42)
 			.addField('Ready Timestamp', `<t:${dayjs(container.client.readyTimestamp).unix()}>`, true)
-			.addField('API Latency', `${endTime - startTime}ms`, true)
-			.addField('API Status', status.state, true)
 			.addField('Statistics', this.generalStatistics, true)
 			.addField('Uptime', this.uptimeStatistics, true)
 			.addField('Server Usage', this.usageStatistics, true)
