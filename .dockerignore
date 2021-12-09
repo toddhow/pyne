@@ -8,7 +8,7 @@ dist/
 
 # VSCode folder/files
 .vscode/
-Pyne.code-workspace
+pyne.code-workspace
 
 # node_modules
 node_modules/

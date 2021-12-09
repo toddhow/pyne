@@ -7,9 +7,12 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model GuildSettings {
+model guilds {
   id                String    @id
   disabledChannels  String[]
-  modRoles          String[]
   prefixes          String[]
+}
+
+model users {
+  id                String @id
 }
