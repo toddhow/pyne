@@ -28,7 +28,7 @@
 		"@sapphire/plugin-editable-commands": "next",
 		"@sapphire/plugin-logger": "next",
 		"@sapphire/plugin-subcommands": "next",
-		"@sapphire/snowflake": "^2.1.4",
+		"@sapphire/snowflake": "^3.0.0",
 		"@sapphire/time-utilities": "next",
 		"@sapphire/type": "2.1.2",
 		"@sapphire/utilities": "3.1.0",
