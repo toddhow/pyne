@@ -7,10 +7,10 @@ export class settingsManager {
 	 * Creates new guild in database
 	 * @param GuildResolvable
 	 */
-	public async create(guild: GuildResolvable) {
+	public create(guild: GuildResolvable) {
 		const resolved = container.client.guilds.resolveId(guild);
 		if (resolved === null) throw new TypeError(`Cannot resolve "guild" to a Guild instance.`);
-		return container.db.guildSettings.create({ data: { id: resolved } });
+		return container.db.guilds.create({ data: { id: resolved } });
 	}
 
 	/**
@@ -22,7 +22,7 @@ export class settingsManager {
 	public async fetch(guild: GuildResolvable): Promise<GuildSettings | null> {
 		const resolved = container.client.guilds.resolveId(guild);
 		if (resolved === null) throw new TypeError(`Cannot resolve "guild" to a Guild instance.`);
-		const result = await container.db.guildSettings.findUnique({
+		const result = await container.db.guilds.findUnique({
 			where: { id: resolved }
 		});
 		if (!result) {
