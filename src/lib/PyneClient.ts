@@ -1,7 +1,6 @@
 import { SapphireClient, container } from '@sapphire/framework';
 import type { Message } from 'discord.js';
 import { isGuildMessage } from '#utils/common';
-import { settings } from '#lib/database';
 import { CLIENT_OPTIONS } from '../config';
 
 export class PyneClient extends SapphireClient {
@@ -11,7 +10,7 @@ export class PyneClient extends SapphireClient {
 
 	public fetchPrefix = async (message: Message) => {
 		if (!isGuildMessage(message)) return ['*', ''];
-		const result = await settings.fetch(message.guild);
+		const result = await container.settingsManager.fetch(message.guild);
 		return result!.prefixes.length ? result!.prefixes : ['*'];
 	};
 
