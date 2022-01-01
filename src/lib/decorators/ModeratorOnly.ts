@@ -1,3 +1,4 @@
+/*
 import { OWNERS } from '#root/config';
 import { createFunctionPrecondition } from '@sapphire/decorators';
 import { container, UserError } from '@sapphire/framework';
@@ -18,3 +19,4 @@ export function ModeratorOnly(): MethodDecorator {
 		return true;
 	});
 }
+*/
