@@ -18,12 +18,12 @@ import { Message, MessageEmbed } from 'discord.js';
 export class UserCommand extends PyneSubCommand {
 	@AdministatorOnly()
 	public async add(message: Message, args: Args) {
-		const result = await container.db.guildSettings.findUnique({
+		const result = await container.db.guilds.findUnique({
 			where: { id: message.guild!.id }
 		});
 		const prefix = await args.pick('string');
 		if (result!.prefixes.includes(prefix)) return reply(message, 'This prefix already exists!');
-		await container.db.guildSettings.update({
+		await container.db.guilds.update({
 			where: { id: message.guild!.id },
 			data: {
 				prefixes: {
@@ -37,7 +37,7 @@ export class UserCommand extends PyneSubCommand {
 	@AdministatorOnly()
 	public async remove(message: Message, args: Args) {
 		const prefix = await args.pick('string');
-		const guild = await container.db.guildSettings.findUnique({
+		const guild = await container.db.guilds.findUnique({
 			where: { id: message.guild!.id }
 		});
 		if (!guild?.prefixes.includes(prefix)) return reply(message, `The prefix ${prefix} does not exist`);
@@ -53,7 +53,7 @@ export class UserCommand extends PyneSubCommand {
 	}
 
 	public async show(message: Message) {
-		const result = await container.db.guildSettings.findUnique({ where: { id: message.guild!.id } });
+		const result = await container.db.guilds.findUnique({ where: { id: message.guild!.id } });
 		const prefixes = result!.prefixes.toString();
 		const embed = new MessageEmbed()
 			.setAuthor(`${message.guild!.name}'s prefixes (${result?.prefixes.length})`, message.guild!.iconURL() as string)

@@ -5,7 +5,7 @@ import type { Message } from 'discord.js';
 
 export function ModeratorOnly(): MethodDecorator {
 	return createFunctionPrecondition(async (message: Message) => {
-		const result = await container.db.guildSettings.findUnique({
+		const result = await container.db.guilds.findUnique({
 			where: { id: message.guild!.id }
 		});
 		if (
