@@ -55,20 +55,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/eslintrc@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@eslint/eslintrc@npm:1.0.4"
+"@eslint/eslintrc@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@eslint/eslintrc@npm:1.0.5"
   dependencies:
     ajv: ^6.12.4
     debug: ^4.3.2
-    espree: ^9.0.0
+    espree: ^9.2.0
     globals: ^13.9.0
     ignore: ^4.0.6
     import-fresh: ^3.2.1
     js-yaml: ^4.1.0
     minimatch: ^3.0.4
     strip-json-comments: ^3.1.1
-  checksum: 570f87e216944830b3761889f14cdf1e9bc7dcc2211e941585cfc2768575954e26852605eb441e21c9581472f89ea0e9cfdb8309523e9fe0a57fe9342bda4fe0
+  checksum: b35b50d7b65bd8acd92a05b6fb15ac62c0cefa40dfef0324ca5bf8632bf3679bab6e173c53b3ad1e1d837701cecdbd9c144b35f46588cdf4e046a9caa272488d
   languageName: node
   linkType: hard
 
@@ -79,18 +79,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@humanwhocodes/config-array@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "@humanwhocodes/config-array@npm:0.6.0"
+"@humanwhocodes/config-array@npm:^0.9.2":
+  version: 0.9.2
+  resolution: "@humanwhocodes/config-array@npm:0.9.2"
   dependencies:
-    "@humanwhocodes/object-schema": ^1.2.0
+    "@humanwhocodes/object-schema": ^1.2.1
     debug: ^4.1.1
     minimatch: ^3.0.4
-  checksum: 1025b07514b7bfd10a05e8b6cb5e6520878e9c8836b3dd0569fc07df29a09e428c2df1e0760b1d461da8ed6f81ca83ecb02e24198f80b0a177a2acbf532e267c
+  checksum: 28a9e2974c50a86765cb6cc96e03d29187ea33fdaba62c4f35db89002e3cfbd340e64c9f6cf869e33e2e5cdcc06e78763458f4178d38a6f30aea1308787ca706
   languageName: node
   linkType: hard
 
-"@humanwhocodes/object-schema@npm:^1.2.0":
+"@humanwhocodes/object-schema@npm:^1.2.1":
   version: 1.2.1
   resolution: "@humanwhocodes/object-schema@npm:1.2.1"
   checksum: a824a1ec31591231e4bad5787641f59e9633827d0a2eaae131a288d33c9ef0290bd16fda8da6f7c0fcb014147865d12118df10db57f27f41e20da92369fcb3f1
@@ -144,31 +144,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:^3.5.0":
-  version: 3.5.0
-  resolution: "@prisma/client@npm:3.5.0"
+"@prisma/client@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "@prisma/client@npm:3.6.0"
   dependencies:
-    "@prisma/engines-version": 3.5.0-38.78a5df6def6943431f4c022e1428dbc3e833cf8e
+    "@prisma/engines-version": 3.6.0-24.dc520b92b1ebb2d28dc3161f9f82e875bd35d727
   peerDependencies:
     prisma: "*"
   peerDependenciesMeta:
     prisma:
       optional: true
-  checksum: 515880b22c4df43185cefb17fe34968c9ba51cf4fead39e2a9bd9da7ba58a3303194ca0d81fcee27e9a14caa017d3f92cffdcdb4e90fa912ba1ca9508991503d
+  checksum: 83835117d60d100cf0933f60933603f5b85833414ad4dae9ea6b18f99190030317de459bbb573e928f764b476733676722fd90637292defae887dd974a2914a1
   languageName: node
   linkType: hard
 
-"@prisma/engines-version@npm:3.5.0-38.78a5df6def6943431f4c022e1428dbc3e833cf8e":
-  version: 3.5.0-38.78a5df6def6943431f4c022e1428dbc3e833cf8e
-  resolution: "@prisma/engines-version@npm:3.5.0-38.78a5df6def6943431f4c022e1428dbc3e833cf8e"
-  checksum: 2919f44abc369ec48c8b2c0169293934ba7e2cff6e2bf29a86731b9e1a8c6bad8a3ffc41e604187ea75cfbb04b138bad7e4fe8ec7b557b437e0e2264ef9806df
+"@prisma/engines-version@npm:3.6.0-24.dc520b92b1ebb2d28dc3161f9f82e875bd35d727":
+  version: 3.6.0-24.dc520b92b1ebb2d28dc3161f9f82e875bd35d727
+  resolution: "@prisma/engines-version@npm:3.6.0-24.dc520b92b1ebb2d28dc3161f9f82e875bd35d727"
+  checksum: 40adea282d62b7d8d03696f3f9f1c6da271671955f5305d3750d07f80eff7bcfad89430e97215183d027895487c4ab36373fc8f59df1a537eb2ab18458168993
   languageName: node
   linkType: hard
 
-"@prisma/engines@npm:3.5.0-38.78a5df6def6943431f4c022e1428dbc3e833cf8e":
-  version: 3.5.0-38.78a5df6def6943431f4c022e1428dbc3e833cf8e
-  resolution: "@prisma/engines@npm:3.5.0-38.78a5df6def6943431f4c022e1428dbc3e833cf8e"
-  checksum: 2a31da94fef3c497d66ae77174c1a6627e7aae63039b01cbd4f2dbc4b44198dd4932af48a013566bb54ed173dd948d75b8d47bfb4f139551cc685f2e2cf2f0ad
+"@prisma/engines@npm:3.6.0-24.dc520b92b1ebb2d28dc3161f9f82e875bd35d727":
+  version: 3.6.0-24.dc520b92b1ebb2d28dc3161f9f82e875bd35d727
+  resolution: "@prisma/engines@npm:3.6.0-24.dc520b92b1ebb2d28dc3161f9f82e875bd35d727"
+  checksum: 3eb1e40dbd6ca8e8bd727048393b9fd993b415bcc1efca2f6bac5b0a60da8e73c2dd35602c4083b29fc31fd17a2cc9ba0522afe1b6499a68663ecdf5f833cdb3
   languageName: node
   linkType: hard
 
@@ -188,39 +188,60 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/discord-utilities@npm:2.2.3, @sapphire/discord-utilities@npm:^2.2.3":
-  version: 2.2.3
-  resolution: "@sapphire/discord-utilities@npm:2.2.3"
+"@sapphire/discord-utilities@npm:2.4.0, @sapphire/discord-utilities@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "@sapphire/discord-utilities@npm:2.4.0"
   dependencies:
     twemoji-parser: ^13.1.0
-  checksum: 87954ebe5014a760f0f23ca574a95c4f781595ff00f717a1792da1bc81f7b76fcd635335e658eb73b9a9220b05394ef14e381a0bb13055e5a7d9d00c7df336fe
+  checksum: e6f191987f4eea912cfc4818c3617aba9f3206f95a09afb2f997331ed22dde398b0225958b648690e28ccc7c24f0753051962f9c0a63780fac03031a6a5c214e
   languageName: node
   linkType: hard
 
-"@sapphire/discord.js-utilities@npm:^4.1.3":
-  version: 4.1.3
-  resolution: "@sapphire/discord.js-utilities@npm:4.1.3"
+"@sapphire/discord-utilities@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@sapphire/discord-utilities@npm:2.3.0"
   dependencies:
-    "@sapphire/discord-utilities": ^2.2.3
-    "@sapphire/time-utilities": ^1.4.9
+    twemoji-parser: ^13.1.0
+  checksum: 667bd95caac1bee9794bbc7fb158f51ae1efa8d59c277c6ccd6629aaa27c1e88c98c20ed5036bf4078bb51194085de87eca46fa2429cf0a8a906107a6312f4eb
+  languageName: node
+  linkType: hard
+
+"@sapphire/discord.js-utilities@npm:^4.1.4":
+  version: 4.1.4
+  resolution: "@sapphire/discord.js-utilities@npm:4.1.4"
+  dependencies:
+    "@sapphire/discord-utilities": ^2.3.0
+    "@sapphire/time-utilities": ^1.5.0
     "@sapphire/utilities": ^3.1.0
     tslib: ^2.3.1
-  checksum: 6aeebc0a1ac5acf6bd1767a0684c095b173fbf0e7b90255e00ddd5e1597ca2a36927f33bd62de5b96b7415186485836115d0fd1cc7283697973689b99b335257
+  checksum: d3678bf59c5ead016eac1d0420cbeab0a2489f670430a6732e424def38a06e350ffb0cbb15557dd20e07516c714baf81dc15ef044cef89f9ba2bb487149c5522
   languageName: node
   linkType: hard
 
-"@sapphire/eslint-config@npm:^4.0.7":
-  version: 4.0.7
-  resolution: "@sapphire/eslint-config@npm:4.0.7"
+"@sapphire/discord.js-utilities@npm:^4.1.5":
+  version: 4.1.5
+  resolution: "@sapphire/discord.js-utilities@npm:4.1.5"
   dependencies:
-    "@typescript-eslint/eslint-plugin": ^5.4.0
-    "@typescript-eslint/parser": ^5.4.0
-    eslint: ^8.3.0
+    "@sapphire/discord-utilities": ^2.4.0
+    "@sapphire/time-utilities": ^1.5.0
+    "@sapphire/utilities": ^3.1.0
+    tslib: ^2.3.1
+  checksum: 4e6c0d4669db659e4f15c2a0a55c9a52f25003c39c79063968ef91b0a47f082d73811ca43e91be06798ecf0ded02c6c002f99de5cb1a6c2d9d0699d30d1a0ba2
+  languageName: node
+  linkType: hard
+
+"@sapphire/eslint-config@npm:^4.0.8":
+  version: 4.0.8
+  resolution: "@sapphire/eslint-config@npm:4.0.8"
+  dependencies:
+    "@typescript-eslint/eslint-plugin": ^5.6.0
+    "@typescript-eslint/parser": ^5.6.0
+    eslint: ^8.4.1
     eslint-config-prettier: ^8.3.0
     eslint-plugin-prettier: ^4.0.0
-    prettier: ^2.5.0
+    prettier: ^2.5.1
     typescript: ^4.5.2
-  checksum: 5aa40dad69e855b068f7b5da759888f85f713d6de8ae7a3addf1881118b76031d0be703537f6251e2583ccaf05fafeba84bb9740d012746d7e08adc7f516a4aa
+  checksum: 7f3c1fa80515d52855e010bf2ebb28a099003a0260b8d36def569f3dccf6419c3991ee87383ec8a7af949861fa58e3757088cd93687aef882ee6844f4a01d11f
   languageName: node
   linkType: hard
 
@@ -233,18 +254,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@sapphire/framework@npm:2.2.0"
+"@sapphire/framework@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "@sapphire/framework@npm:2.2.1"
   dependencies:
-    "@sapphire/discord-utilities": ^2.2.3
-    "@sapphire/discord.js-utilities": ^4.1.3
+    "@sapphire/discord-utilities": ^2.3.0
+    "@sapphire/discord.js-utilities": ^4.1.4
     "@sapphire/pieces": ^3.2.0
-    "@sapphire/ratelimits": ^2.1.9
+    "@sapphire/ratelimits": ^2.1.10
     "@sapphire/utilities": ^3.1.0
     lexure: ^0.17.0
     tslib: ^2.3.1
-  checksum: 932bdcc49b62f9b1f3f6c3a5a9d8f4c1874488cfc7cfcdfb0f37414695fa60ae4e55f52662f0a5b474d21bfa7a5f8cd4528d6db637a7e3b2fc21a13583203195
+  checksum: 9903a4fd5f627730ed318f0bce31cd54029cd06cbd48f39ee78f9e7a7e7250339b651915f4ee967a65b7778fa2acdeacf2f6dbafb322c7e609b4f9c2a4ab5090
   languageName: node
   linkType: hard
 
@@ -303,28 +324,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/prettier-config@npm:^1.2.6":
-  version: 1.2.6
-  resolution: "@sapphire/prettier-config@npm:1.2.6"
+"@sapphire/prettier-config@npm:^1.2.7":
+  version: 1.2.7
+  resolution: "@sapphire/prettier-config@npm:1.2.7"
   dependencies:
-    prettier: ^2.5.0
-  checksum: 013b716276eac78f790f0d20ac6355fa677df1fdbdc1f7e986f5b282fc6f3c7516127819ed33bdd1852fd9f0876fccaa29b455c0721be2ecd74d312e03fe338e
+    prettier: ^2.5.1
+  checksum: 4b3f048c10001df84b07c78d82597f1771506cc99bc4a272614db0cf20ccf384fdb6c15b3b705acd5d7765466e808bcb6b9741a88be361b1cb6d14bee9f2953e
   languageName: node
   linkType: hard
 
-"@sapphire/ratelimits@npm:^2.1.9":
-  version: 2.1.9
-  resolution: "@sapphire/ratelimits@npm:2.1.9"
+"@sapphire/ratelimits@npm:^2.1.10":
+  version: 2.1.10
+  resolution: "@sapphire/ratelimits@npm:2.1.10"
   dependencies:
-    "@sapphire/time-utilities": ^1.4.9
-  checksum: c344990fc37ff412ddc7478c7861d6bac135a3384b3670fc8f4d91ef2bda98e07bfcdd5af6ae140a8af5610ca6711fa27b3ccdeea763ec8208cac635794debcf
+    "@sapphire/time-utilities": ^1.5.0
+  checksum: 6f4bc917ba549ab11ef63f4aea3a2356962d556352257d0fdef7a5e2a8bda4ca00ce80752dee4660f716bfd49de3e2e527c03783dc74b13d0f155ef1356a976b
   languageName: node
   linkType: hard
 
-"@sapphire/snowflake@npm:^2.1.4":
-  version: 2.1.4
-  resolution: "@sapphire/snowflake@npm:2.1.4"
-  checksum: 922ed8b2ae685a437a98e2c1e0d39a8d3001246583237007ab1f47669c2d7877d9954e0bfda5d39a53fc44f7ae1a42f7b106ee6c5d3b55dbc12e80f435fbc073
+"@sapphire/snowflake@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@sapphire/snowflake@npm:3.0.0"
+  checksum: 1b5aa886f2f4372984f7b04b4fc5c14b9088dc291a5012a9e9f97d46dd590d4a6fa080e15d58d42aa7dc4ec51ed6bcaadac925f4613d8070d4fc32c7dc874115
   languageName: node
   linkType: hard
 
@@ -334,6 +355,15 @@ __metadata:
   dependencies:
     "@sapphire/utilities": ^3.1.0
   checksum: d3ebd99ce7b99588fefedb60b585707b90b925db683d60a1b6f6b4a44430198c9100ce99d58f781c4e9a86a1b77c0f911bbee6593b189fc568ce198ac6a25512
+  languageName: node
+  linkType: hard
+
+"@sapphire/time-utilities@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@sapphire/time-utilities@npm:1.5.0"
+  dependencies:
+    "@sapphire/utilities": ^3.1.0
+  checksum: c624651601ab41e81d25718c40d7a8eb7d95b39fe6d51b5c3ee28dbe1f1f621b8107c83753a12be4be2111a4e2dc8d4c568f5625d7bbde57cc663963ba04857e
   languageName: node
   linkType: hard
 
@@ -412,10 +442,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^16.11.10":
+"@types/node@npm:*":
   version: 16.11.10
   resolution: "@types/node@npm:16.11.10"
   checksum: 9c79419c5c3d92d5825bffa30f3668533f598d8b63a73ea7fc24e47f162bdbed92b0f8e4f4261cc3314b39cee050e303366d2aa154abc95c63a572a110b8c160
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^16.11.12":
+  version: 16.11.12
+  resolution: "@types/node@npm:16.11.12"
+  checksum: a3feb346d61a56f5a137c29bb8c63cfa3cc02e184b9dffdc18ef1528dcce55596e570575215a2e39e6ce69343eeb2a5ba71c271938f1dc8db4cc393902855412
   languageName: node
   linkType: hard
 
@@ -435,12 +472,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.4.0":
-  version: 5.4.0
-  resolution: "@typescript-eslint/eslint-plugin@npm:5.4.0"
+"@types/ws@npm:^8.2.2":
+  version: 8.2.2
+  resolution: "@types/ws@npm:8.2.2"
   dependencies:
-    "@typescript-eslint/experimental-utils": 5.4.0
-    "@typescript-eslint/scope-manager": 5.4.0
+    "@types/node": "*"
+  checksum: 308957864b9a5a0378ac82f1b084fa31b1bbe85106fb0d84ed2b392e4829404f21ab6ab2c1eb782d556e59cd33d57c75ad2d0cedc4b9b9d0ca3b2311bc915578
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/eslint-plugin@npm:^5.6.0":
+  version: 5.6.0
+  resolution: "@typescript-eslint/eslint-plugin@npm:5.6.0"
+  dependencies:
+    "@typescript-eslint/experimental-utils": 5.6.0
+    "@typescript-eslint/scope-manager": 5.6.0
     debug: ^4.3.2
     functional-red-black-tree: ^1.0.1
     ignore: ^5.1.8
@@ -453,66 +499,66 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 83e8d5ab66405b9ff9a63dfc66ff45870c2ede6f7ef3368f57fa6140f97c4aac28d9e44b71f6443b004f41b5b36003a4609dc3bd51bcc96c72bd1f4d42af1d7b
+  checksum: aeae8c2de535cad6032c0b27fbb86baccd07788319efd5a97d828bc03a85eae5e635aff794a1d7a2b3ee2a84d6d6d7e68c42438fee62af42fead89f381df7bca
   languageName: node
   linkType: hard
 
-"@typescript-eslint/experimental-utils@npm:5.4.0":
-  version: 5.4.0
-  resolution: "@typescript-eslint/experimental-utils@npm:5.4.0"
+"@typescript-eslint/experimental-utils@npm:5.6.0":
+  version: 5.6.0
+  resolution: "@typescript-eslint/experimental-utils@npm:5.6.0"
   dependencies:
     "@types/json-schema": ^7.0.9
-    "@typescript-eslint/scope-manager": 5.4.0
-    "@typescript-eslint/types": 5.4.0
-    "@typescript-eslint/typescript-estree": 5.4.0
+    "@typescript-eslint/scope-manager": 5.6.0
+    "@typescript-eslint/types": 5.6.0
+    "@typescript-eslint/typescript-estree": 5.6.0
     eslint-scope: ^5.1.1
     eslint-utils: ^3.0.0
   peerDependencies:
     eslint: "*"
-  checksum: 85c818a147e86bfde3db8b2ed3f3a79855f9baf539a0f4796715b1632afdd79638bc5bb525ce9e616ee3a0f549889b5e8049a51801ff75eabf13ab4ba474e0f1
+  checksum: f708f38be41a3cb4c8c2c8573a660ce7de88f50becf53bea6679fcc8a56ba73c59f2e1a94f5a7773c8cccaf0c2e4dda679564c67764c989f8137594d6589aa4c
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.4.0":
-  version: 5.4.0
-  resolution: "@typescript-eslint/parser@npm:5.4.0"
+"@typescript-eslint/parser@npm:^5.6.0":
+  version: 5.6.0
+  resolution: "@typescript-eslint/parser@npm:5.6.0"
   dependencies:
-    "@typescript-eslint/scope-manager": 5.4.0
-    "@typescript-eslint/types": 5.4.0
-    "@typescript-eslint/typescript-estree": 5.4.0
+    "@typescript-eslint/scope-manager": 5.6.0
+    "@typescript-eslint/types": 5.6.0
+    "@typescript-eslint/typescript-estree": 5.6.0
     debug: ^4.3.2
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: d76732469cb100426fb9574713c1065c14969a502214b8b400e4829e5c01b1fe4744ce59a86ef9fd4ac5baf620454c517975b136b8735881f617e53322325cd7
+  checksum: 7d703cfe6b0a33b35139f509bcc16065f234a11603244cee4f55e193112d93ed9cd4a6db4bcf57c6b766e8a4d602b4f2400cb8d52ea02b3fc2cdfb64e5b88a3e
   languageName: node
   linkType: hard
 
-"@typescript-eslint/scope-manager@npm:5.4.0":
-  version: 5.4.0
-  resolution: "@typescript-eslint/scope-manager@npm:5.4.0"
+"@typescript-eslint/scope-manager@npm:5.6.0":
+  version: 5.6.0
+  resolution: "@typescript-eslint/scope-manager@npm:5.6.0"
   dependencies:
-    "@typescript-eslint/types": 5.4.0
-    "@typescript-eslint/visitor-keys": 5.4.0
-  checksum: 681007e727f01b694a8dbec79eba993479eb2c8aa26a0e02832d9e99bca4ba97258d8a2845bd6fb8ab461081a268d5db9b0b67385d357a07d58f78a9386f4682
+    "@typescript-eslint/types": 5.6.0
+    "@typescript-eslint/visitor-keys": 5.6.0
+  checksum: 6fea574f6e911eb25258e75fc738a36099678ba96cd447d18da28209bfa5326ba4e97aa7f254ccd0415aec15ea70d0b6fb860dd985d4f9042df57d4a227ae9d1
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:5.4.0":
-  version: 5.4.0
-  resolution: "@typescript-eslint/types@npm:5.4.0"
-  checksum: 8d1dc7149e597ae98917cc109136b8c081682158f688b2ca76256493e46b4acfda2135e30258200e83a40492678683393f0eb4d508d43b80b321ea006fc11a38
+"@typescript-eslint/types@npm:5.6.0":
+  version: 5.6.0
+  resolution: "@typescript-eslint/types@npm:5.6.0"
+  checksum: 63abd287a265cb1bed06067117c11bf1c69c5db1a14ea59e13564dcd9d513ae2dac67969541f21381500139d40bbea67b269c32607d3204ab24ea8900c449293
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:5.4.0":
-  version: 5.4.0
-  resolution: "@typescript-eslint/typescript-estree@npm:5.4.0"
+"@typescript-eslint/typescript-estree@npm:5.6.0":
+  version: 5.6.0
+  resolution: "@typescript-eslint/typescript-estree@npm:5.6.0"
   dependencies:
-    "@typescript-eslint/types": 5.4.0
-    "@typescript-eslint/visitor-keys": 5.4.0
+    "@typescript-eslint/types": 5.6.0
+    "@typescript-eslint/visitor-keys": 5.6.0
     debug: ^4.3.2
     globby: ^11.0.4
     is-glob: ^4.0.3
@@ -521,17 +567,17 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 2f818c629c2b43b5cb669e9d950b9afadbad94275ef867308f8544277631f723ffd769852a522012c1aef12a9bba11ae46e72469187e3630f7ae373bc8c8a1c0
+  checksum: eb5cc53ddad6fe7772677798bcb682e859ac82674cf0adcdd7105814ddecdbb9d58a4a27f87caa68eb9f40dcc5ce1b0ce87db3cf50deffa5f7fa6c354c8bee68
   languageName: node
   linkType: hard
 
-"@typescript-eslint/visitor-keys@npm:5.4.0":
-  version: 5.4.0
-  resolution: "@typescript-eslint/visitor-keys@npm:5.4.0"
+"@typescript-eslint/visitor-keys@npm:5.6.0":
+  version: 5.6.0
+  resolution: "@typescript-eslint/visitor-keys@npm:5.6.0"
   dependencies:
-    "@typescript-eslint/types": 5.4.0
+    "@typescript-eslint/types": 5.6.0
     eslint-visitor-keys: ^3.0.0
-  checksum: a0c1c5e3fbe2fb6d49e240603f7f613e071a9b5a5a7dd41b7a10cf4d71fbda522c1d3af8389efafd7c03cacd5d2ab9286d6e805d530957aba3a6538b9d248a3a
+  checksum: c1d9e2596ff4f03b52857a77ff373ca82e66c1883ea818f28c3a18e5c4877c4ac6367874f4681223e9134bcebd6560f95b9a3d12c411060d567a17d10113e9e5
   languageName: node
   linkType: hard
 
@@ -970,6 +1016,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"discord-api-types@npm:^0.25.2":
+  version: 0.25.2
+  resolution: "discord-api-types@npm:0.25.2"
+  checksum: bb80a9db706d8ae391ab5eae4536827832ffe744b69659029597aaf90d9b9ece6e9642bd44eb3f38b32a3783ad1eebce378403fc785ca5405f8b71d8d32678a5
+  languageName: node
+  linkType: hard
+
 "discord.js@npm:^13.3.1":
   version: 13.3.1
   resolution: "discord.js@npm:13.3.1"
@@ -1005,9 +1058,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-cli@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "dotenv-cli@npm:4.1.0"
+"dotenv-cli@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "dotenv-cli@npm:4.1.1"
   dependencies:
     cross-spawn: ^7.0.1
     dotenv: ^8.1.0
@@ -1015,7 +1068,7 @@ __metadata:
     minimist: ^1.1.3
   bin:
     dotenv: cli.js
-  checksum: 3b47c70fc61d4d659d553904593da8df33ee75b15a4315884da2b1e8e34c398b400faf9ebcda2032e808a4a0530d2bd6bf331130a00cd6c0ddfbab60b156c1e3
+  checksum: 7c2e88e6a5990471de0fb14d79bdf90d588cc6732be10d5435f3e75d1733d1e21f9603810da313ef726b12bd0b5acd106a02f7a70f418fba288406d1187311ca
   languageName: node
   linkType: hard
 
@@ -1229,12 +1282,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.3.0":
-  version: 8.3.0
-  resolution: "eslint@npm:8.3.0"
+"eslint@npm:^8.4.1":
+  version: 8.4.1
+  resolution: "eslint@npm:8.4.1"
   dependencies:
-    "@eslint/eslintrc": ^1.0.4
-    "@humanwhocodes/config-array": ^0.6.0
+    "@eslint/eslintrc": ^1.0.5
+    "@humanwhocodes/config-array": ^0.9.2
     ajv: ^6.10.0
     chalk: ^4.0.0
     cross-spawn: ^7.0.2
@@ -1245,7 +1298,7 @@ __metadata:
     eslint-scope: ^7.1.0
     eslint-utils: ^3.0.0
     eslint-visitor-keys: ^3.1.0
-    espree: ^9.1.0
+    espree: ^9.2.0
     esquery: ^1.4.0
     esutils: ^2.0.2
     fast-deep-equal: ^3.1.3
@@ -1273,18 +1326,18 @@ __metadata:
     v8-compile-cache: ^2.0.3
   bin:
     eslint: bin/eslint.js
-  checksum: c0338471fc787384077b132fb1496f264a4d7ed032b9072b2f6b8b1c833edc89b0a4890080576781ce6101a2700341af413ecbf1b66f0780aa02601c40fb2008
+  checksum: d962cd7cd0f68ddc2412f47154b8992ad3af987cf47fa6e60e51a2b7d32a91f934388f7d29e2c45b16b7ac69f0d220d0a483189ec6ba43a8a480110c34f158f9
   languageName: node
   linkType: hard
 
-"espree@npm:^9.0.0, espree@npm:^9.1.0":
-  version: 9.1.0
-  resolution: "espree@npm:9.1.0"
+"espree@npm:^9.2.0":
+  version: 9.2.0
+  resolution: "espree@npm:9.2.0"
   dependencies:
     acorn: ^8.6.0
     acorn-jsx: ^5.3.1
     eslint-visitor-keys: ^3.1.0
-  checksum: ba9b0f759c49c19a098e0bb97f3b9b05441a60dec3f868bc412ae300e00ba20cb0bd2c6a1bdd6c4f0056e6382650bf45b4982d81e67ad0210c1c16b336f73c39
+  checksum: ae533a058036e3efeeac43a0ee39c74ab347e2a73bbe2946fba33cc0d84aca657e675bc317ed9afd95338f79d5d5a862afec2f717d2539ae13fa9f1638371761
   languageName: node
   linkType: hard
 
@@ -2561,24 +2614,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.5.0":
-  version: 2.5.0
-  resolution: "prettier@npm:2.5.0"
+"prettier@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "prettier@npm:2.5.1"
   bin:
     prettier: bin-prettier.js
-  checksum: aad1b35b73e7c14596d389d90977a83dad0db689ba5802a0ef319c357b7867f55b885db197972aa6a56c30f53088c9f8e0d7f7930ae074c275a4e9cbe091d21d
+  checksum: 21b9408476ea1c544b0e45d51ceb94a84789ff92095abb710942d780c862d0daebdb29972d47f6b4d0f7ebbfb0ffbf56cc2cfa3e3e9d1cca54864af185b15b66
   languageName: node
   linkType: hard
 
-"prisma@npm:^3.5.0":
-  version: 3.5.0
-  resolution: "prisma@npm:3.5.0"
+"prisma@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "prisma@npm:3.6.0"
   dependencies:
-    "@prisma/engines": 3.5.0-38.78a5df6def6943431f4c022e1428dbc3e833cf8e
+    "@prisma/engines": 3.6.0-24.dc520b92b1ebb2d28dc3161f9f82e875bd35d727
   bin:
     prisma: build/index.js
     prisma2: build/index.js
-  checksum: 5ac2558dc29a8c325d991e59de2208bf6756bddb4fa2d3d97cd17aa9daa94611515d3ab284777adcda2c7b918b0624316e7081bae5d1c01b449738b8ebf81882
+  checksum: 365718b1e0ed8491aedb79bda39c500e8fddae0d62f57ed0ab3786c6709bd79d43b61c3603847b165b5a3de1e983b64388902a9ed55d4d5cb5878d67af23da8b
   languageName: node
   linkType: hard
 
@@ -2636,41 +2689,41 @@ __metadata:
   resolution: "pyne@workspace:."
   dependencies:
     "@discordjs/collection": ^0.3.2
-    "@prisma/client": ^3.5.0
+    "@prisma/client": ^3.6.0
     "@sapphire/decorators": next
-    "@sapphire/discord-utilities": 2.2.3
-    "@sapphire/discord.js-utilities": ^4.1.3
-    "@sapphire/eslint-config": ^4.0.7
+    "@sapphire/discord-utilities": 2.4.0
+    "@sapphire/discord.js-utilities": ^4.1.5
+    "@sapphire/eslint-config": ^4.0.8
     "@sapphire/fetch": next
-    "@sapphire/framework": ^2.2.0
+    "@sapphire/framework": ^2.2.1
     "@sapphire/plugin-api": next
     "@sapphire/plugin-editable-commands": next
     "@sapphire/plugin-logger": next
     "@sapphire/plugin-subcommands": next
-    "@sapphire/prettier-config": ^1.2.6
-    "@sapphire/snowflake": ^2.1.4
+    "@sapphire/prettier-config": ^1.2.7
+    "@sapphire/snowflake": ^3.0.0
     "@sapphire/time-utilities": next
     "@sapphire/ts-config": ^3.1.6
     "@sapphire/type": 2.1.2
     "@sapphire/utilities": 3.1.0
     "@skyra/editable-commands": ^2.1.1
-    "@types/node": ^16.11.10
-    "@types/ws": ^8.2.0
-    "@typescript-eslint/eslint-plugin": ^5.4.0
-    "@typescript-eslint/parser": ^5.4.0
+    "@types/node": ^16.11.12
+    "@types/ws": ^8.2.2
+    "@typescript-eslint/eslint-plugin": ^5.6.0
+    "@typescript-eslint/parser": ^5.6.0
     axios: ^0.24.0
     colorette: ^2.0.16
     dayjs: ^1.10.7
-    discord-api-types: ^0.24.0
+    discord-api-types: ^0.25.2
     discord.js: ^13.3.1
-    dotenv-cli: ^4.1.0
+    dotenv-cli: ^4.1.1
     dotenv-cra: ^3.0.2
-    eslint: ^8.3.0
+    eslint: ^8.4.1
     eslint-config-prettier: ^8.3.0
     eslint-plugin-prettier: ^4.0.0
     npm-run-all: ^4.1.5
-    prettier: ^2.5.0
-    prisma: ^3.5.0
+    prettier: ^2.5.1
+    prisma: ^3.6.0
     tsc-watch: ^4.5.0
     tslib: ^2.3.1
     typescript: ^4.5.2
